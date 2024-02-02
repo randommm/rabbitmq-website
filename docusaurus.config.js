@@ -106,6 +106,15 @@ const config = {
         sidebarPath: './sidebarsTutorials.js',
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'release-information',
+        path: 'release-information',
+        routeBasePath: 'release-information',
+        sidebarPath: './sidebarsReleaseInfo.js',
+      },
+    ],
   ],
 
   themeConfig:

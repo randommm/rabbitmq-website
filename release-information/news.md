@@ -1,6 +1,5 @@
 ---
 title: RabbitMQ Project Announcements
-displayed_sidebar: docsSidebar
 ---
 <div id="left-content">
     <p>
