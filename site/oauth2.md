@@ -73,9 +73,9 @@ To use this plugin, all RabbitMQ nodes must be
 
 1. [configured to use the rabbit_auth_backend_oauth2 backend](./access-control.html).
 2. configured with the resource service ID (`resource_server_id`). The RabbitMQ cluster becomes an OAuth 2.0 resource and this is its identifier.
-3. configured with issuer url of the OAuth 2.0 provider or the JWKS url or directly with the signing keys the OAuth 2.0 provider will use to sign tokens
+3. configured with issuer URL of the OAuth 2.0 provider or the JWKS URL or directly with the signing keys the OAuth 2.0 provider will use to sign tokens
 
-Below it is specified the minimal configuration to support OAuth 2.0 authentication (*Note*: To enable it in the management plugin you need additional configuration):
+Here is the minimal configuration to support OAuth 2.0 authentication (*Note*: To enable it in the management plugin you need additional configuration):
 
 <pre class="lang-ini">
 auth_oauth2.resource_server_id = new_resource_server_id
@@ -90,13 +90,13 @@ Based on the above configuration, JWT Tokens presented to RabbitMQ for authentic
 
 And the `https://my-oauth2-provider.com/realm/rabbitmq/`*.well-known/openid-configuration* must return the OpenID Provider Configuration which includes the JKWS url to download the signing keys (*Note*: *.well-known/openid-configuration* is the OpenID standard path for the OpenID Provider Configuration endpoint).
 
-The next sections covers in more detail what happens during authentication and how to configure OAuth 2.0 beyond the basic configuration shown above.
+The next sections cover in more detail what happens during authentication and how to configure OAuth 2.0 beyond the basic configuration shown above.
 
 ### <a id="authorization-flow" class="anchor" href="#authorization-flow-with-scopes">Authorization Flow</a>
 
 This plugin does not communicate with any OAuth 2.0 provider in order to authenticate user and grants access. Instead, it decodes an access token provided by the client and authorises a user based on the scopes found in the token.
 
-Tokens must be digitally signed in order to be accepted by RabbitMQ. And RabbitMQ must have the signing key to validate the signature. You can either configure the signing keys the OAuth 2.0 provider will use or you configure RabbitMQ with one of the two endpoints below:
+Tokens must be digitally signed in order to be accepted. RabbitMQ must have the signing key to validate the signature. You can either configure the signing keys the OAuth 2.0 provider will use or configure RabbitMQ with one of the two endpoints below:
 
   - **JWKS endpoint** - this is the HTTP endpoint that returns the signing keys used to digitally sign the tokens.
   - **OpenID Provider Configuration endpoint** - this is the endpoint that returns the provider's configuration including all its endpoints, such as the **JWKS endpoint**.
@@ -132,7 +132,7 @@ The token can be any [JWT token](https://jwt.io/introduction/) which contains th
 | `auth_oauth2.https.fail_if_no_peer_cert`   | Used together with `auth_oauth2.https.peer_verification = verify_peer`. When set to `true`, TLS connection will be rejected if client fails to provide a certificate. Default is `false`.
 | `auth_oauth2.https.hostname_verification`  | Enable wildcard-aware hostname verification for key server. Available values: `wildcard`, `none`. Default is `none`.
 | `auth_oauth2.algorithms`                   | Restrict [the usable algorithms](https://github.com/potatosalad/erlang-jose#algorithm-support).
-| `auth_oauth2.verify_aud`                   | [Verify token's `aud`](#token-validation).
+| `auth_oauth2.verify_aud`                   | Whether to verify the [token's `aud`](#token-validation) field or not. Default is `true`.
 | `auth_oauth2.resource_servers`             | Configure multiple OAuth 2.0 resources.
 | `auth_oauth2.oauth_providers`              | Configure multiple OAuth 2.0 providers.
 | `auth_oauth2.default_oauth_provider`       | ID of the OAuth 2.0 provider used for those `auth_oauth2.resource_servers` which did not specify any (via the setting `oauth_provider_id`) or when `auth_oauth2.jwks_url` and `auth_oauth2.issuer` are both missing
@@ -165,7 +165,7 @@ auth_oauth2.algorithms.1 = HS256
 auth_oauth2.algorithms.2 = RS256
 </pre>
 
-Each `auth_oauth2.resource_servers.<id/index>.` have the following settings:
+Each `auth_oauth2.resource_servers.<id/index>.` entry has the following settings:
 
 * `id`
 * `resource_server_type`
@@ -184,7 +184,8 @@ auth_oauth2.resource_servers.1.id = prod
 auth_oauth2.resource_servers.2.id = dev
 </pre>
 
-Each `auth_oauth2.oauth_providers.<id/index>.` have the following settings:
+Each `auth_oauth2.oauth_providers.<id/index>.` entry has the following settings:
+
 * `issuer`
 * `token_endpoint`
 * `jwks_uri`
@@ -195,7 +196,7 @@ Each `auth_oauth2.oauth_providers.<id/index>.` have the following settings:
 * `https.hostname_verification`
 
 
-Here is an example which configures two resources (`prod` and `dev`) where each resource is managed by two distinct Identity Provider:
+Here is an example which configures two resources (`prod` and `dev`) where each resource is managed by two distinct identity providers:
 <pre class="lang-ini">
 auth_oauth2.scope_prefix = rabbitmq.
 auth_oauth2.resource_servers.1.id = prod
@@ -242,7 +243,9 @@ The `aud` ([Audience](https://tools.ietf.org/html/rfc7519#page-9)) identifies th
 
 ### <a id="token-expiration" class="anchor" href="#token-expiration">Token Expiration and Refresh</a>
 
-On an existing connection the token can be refreshed by the [update-secret](https://rabbitmq.com/amqp-0-9-1-reference.html#connection.update-secret) AMQP 0.9.1 method. Please check your client whether it supports this method. (Eg. see documentation of the [Java client](https://rabbitmq.com/api-guide.html#oauth2-refreshing-token).) Otherwise the client has to disconnect and reconnect to use a new token.
+On an existing connection the token can be refreshed by the [update-secret](./amqp-0-9-1-reference.html#connection.update-secret) AMQP 0.9.1 method.
+Please check your client whether it supports this method (e.g. documentation for the [Java client](./api-guide.html#oauth2-refreshing-token)).
+Otherwise the client has to disconnect and reconnect to use a new token.
 
 If the latest token expires on an existing connection, after a limited time the broker will refuse all operations (but it won't disconnect).
 
@@ -405,7 +408,7 @@ or
 
 Nowadays it is very rare you configure RabbitMQ with signing keys, when RabbitMQ can automatically download them as explained in the previous section. However, RabbitMQ supports those edge cases where you need to statically configure the signing keys, or when you need to support symmetric signing keys as opposed to the most widely used asymmetric keys.
 
-The examples given below uses [Cloud Foundry UAA](https://github.com/cloudfoundry/uaa) as OAuth 2.0 provider.
+The example given below uses [Cloud Foundry UAA](https://github.com/cloudfoundry/uaa) as OAuth 2.0 provider.
 
 To get the signing key from the [OAuth 2.0 provider UAA](https://github.com/cloudfoundry/uaa), use the
 [token_key endpoint](https://docs.cloudfoundry.org/api/uaa/version/4.6.0/index.html#token-key-s)
@@ -666,7 +669,7 @@ if RabbitMQ node's `resource_server_id` is equal to `finance`, the plugin will c
 
 As long you have one and only one OAuth 2.0 provider, you can skip this advanced usage although you can use it.
 
-Under the <a href="#configure-issuer">basic usage section</a>, you configured the `issuer` url or maybe the `jwks_url` along with the TLS settings if needed. This advanced usage configures everything relative to the OAuth provider into a dedicated configuration.
+Under the <a href="#configure-issuer">basic usage section</a>, you configured the `issuer` URL or maybe the `jwks_url` along with the TLS settings if needed. This advanced usage configures everything relative to the OAuth provider into a dedicated configuration.
 
 Here is a basic configuration as seen so far:
 
@@ -692,7 +695,7 @@ This advanced configuration will be more relevant when users present tokens whic
 
 ### <a id="multiple-resource-servers" class="anchor" href="#multiple-resource-servers">Multiple Resource Servers</a>
 
-Typically, all users that access a RabbitMQ cluster are registered within the same Identity Provider. And likewise, all tokens targeting the same RabbitMQ cluster also carry the same *audience*. In other words, all users reference a RabbitMQ cluster with the same resource name which must match the value of the `auth_oauth2.resource_server_id` setting.
+Typically, all users that access a RabbitMQ cluster are registered within the same identity provider. And likewise, all tokens targeting the same RabbitMQ cluster also carry the same *audience*. In other words, all users reference a RabbitMQ cluster with the same resource name which must match the value of the `auth_oauth2.resource_server_id` setting.
 
 However, there are some use-cases where RabbitMQ is accessed by users registered in different Identity Providers or tokens are issued for the same RabbitMQ installation but with different *Audience*(s). For these use-cases, RabbitMQ OAuth 2.0 plugin and the Management plugin can be configured with multiple OAuth 2.0 resources.
 
@@ -712,7 +715,7 @@ All resource servers share the settings you have set so far under `auth_oauth2.`
 - `scope_prefix`
 - `additional_scopes_key`
 - `resource_server_type`
-- `oauth_provider_id` - This is the identifier of the OAuth provider, configured in RabbitMQ, which provides all the settings to contact the Authorization server in order to discover all its endpoints, such as the `jwks_uri` to download the signing keys to validate the token. If this setting is omitted, RabbitMQ looks up the default Authorization Provider's id in the setting `auth_oauth2.default_oauth_provider`. And if it is also omitted, RabbitMQ uses `auth_oauth2.issuer` or `auth_oauth2.jwks_url` to download the signings keys to validate the token.
+- `oauth_provider_id` - This is the identifier of the OAuth provider, configured in RabbitMQ, which provides all the settings to contact the authorization server in order to discover all its endpoints, such as the `jwks_uri` to download the signing keys to validate the token. If this setting is omitted, RabbitMQ looks up the default Authorization Provider's id in the setting `auth_oauth2.default_oauth_provider`. And if it is also omitted, RabbitMQ uses `auth_oauth2.issuer` or `auth_oauth2.jwks_url` to download the signings keys to validate the token.
 
 The list of supported resource servers is the combination of `auth_oauth2.resource_servers` and `auth_oauth2.resource_server_id`. You can use both or only one of them.
 

@@ -14,10 +14,10 @@ and several OAuth resources using the following flows:
 
 All the examples demonstrated by this tutorial, except for this use case, configure a single **resource_server_id** and therefore a single **OAuth 2.0 server**.
 
-However, you could encounter scenarios where some management users and/or applications are registered in
-different OAuth2 servers or they could be registered on the same OAuth2 server however they could refer to RabbitMQ with different audience values. When this happens, you have to declare as many OAuth2 resources as audiences and/or Authorization servers.
+You could encounter scenarios where some management users and/or applications are registered in
+different OAuth2 servers or they could be registered on the same OAuth2 server however they could refer to RabbitMQ with different audience values. When this happens, you have to declare as many OAuth2 resources as audiences and/or authorization servers.
 
-The following section demonstrates an scenario where users are declared in **Keycloak** however they refer to RabbitMQ with two distinct **audience**, one `rabbit_prod` and the other `rabbit_dev`.
+The following section demonstrates a scenario where users are declared in **Keycloak** however they refer to RabbitMQ with two distinct **audience**, one `rabbit_prod` and the other `rabbit_dev`.
 
 ## AMQP clients and management users registered in same OAuth 2.0 server but with different audience
 
@@ -55,7 +55,7 @@ auth_oauth2.https.cacertfile = /etc/rabbitmq/keycloak-cacert.pem
 Follow these steps to deploy Keycloak and RabbitMQ:
 
 <ol>
-<li>Launch Keycloak. Check out <a href="http://localhost:8081/admin/master/console/#/test">Admin page</a> with the credentials `admin`:`admin`
+<li>Launch Keycloak. Check out <a href="http://localhost:8081/admin/master/console/#/test">Admin page</a> with the credentials <code>admin</code>:<code>admin</code>
 <pre class="lang-bash">
 make start-keycloak
 </pre>
@@ -67,12 +67,12 @@ make start-rabbitmq
 </pre>
 </li>
 
-<li>Launch AMQP producer registered in Keycloak with the <b>client_id</b> `prod_producer` and with the permission to access `rabbit_prod` resource and with the scopes <pre>rabbitmq.read:*/* rabbitmq.write:*/* rabbitmq.configure:*/*</pre>
+<li>Launch AMQP producer registered in Keycloak with the <b>client_id</b> <code>prod_producer</code> and with the permission to access `rabbit_prod` resource and with the scopes <pre>rabbitmq.read:*/* rabbitmq.write:*/* rabbitmq.configure:*/*</pre>
 <pre class="lang-bash">
 make start-perftest-producer-with-token PRODUCER=prod_producer TOKEN=$(bin/keycloak/token prod_producer PdLHb1w8RH1oD5bpppgy8OF9G6QeRpL9)
 </pre>
 
-This is an access token generated for `prod_producer`.
+This is an access token generated for <code>prod_producer</code>.
 <pre class="lang-javascript">
 {
   "exp": 1690974839,
@@ -110,7 +110,7 @@ This is an access token generated for `prod_producer`.
 }
 </pre>
 </li>
-<li>Similarly, launch AMQP producer `dev_producer`, registered in Keycloak too but with the permission to access `rabbit_dev` resource:
+<li>Similarly, launch AMQP producer <code>dev_producer</code>, registered in Keycloak too but with the permission to access <code>rabbit_dev</code> resource:
 <pre class="lang-bash">
 make start-perftest-producer-with-token PRODUCER=dev_producer TOKEN=$(bin/keycloak/token dev_producer z1PNm47wfWyulTnAaDOf1AggTy3MxX2H)
 </pre>
@@ -122,8 +122,8 @@ make start-perftest-producer-with-token PRODUCER=dev_producer TOKEN=$(bin/keyclo
 
 This is a summary of the configuration, found in [rabbitmq.conf](https://github.com/rabbitmq/rabbitmq-oauth2-tutorial/tree/support-multiple-resource-server-ids/conf/multi-keycloak/rabbitmq.conf):
 
-- There are two users declared in Keycloak: `prod_user` and `dev_user`
-- The two resources, `rabbit_prod` and `rabbit_dev`, are declared in the Rabbitmq management plugin with their own OAuth2 client (`rabbit_prod_mgt_ui` and `rabbit_dev_mgt_ui`), scopes and the label associated to each resource.
+* There are two users declared in Keycloak: `prod_user` and `dev_user`
+* The two resources, `rabbit_prod` and `rabbit_dev`, are declared in the Rabbitmq management plugin with their own OAuth2 client (`rabbit_prod_mgt_ui` and `rabbit_dev_mgt_ui`), scopes and the label associated to each resource.
 <pre class="lang-ini">
 management.oauth_resource_servers.1.id = rabbit_prod
 management.oauth_resource_servers.1.client_id = rabbit_prod_mgt_ui
@@ -135,19 +135,19 @@ management.oauth_resource_servers.2.client_id = rabbit_dev_mgt_ui
 management.oauth_resource_servers.2.label = RabbitMQ Development
 management.oauth_resource_servers.2.scopes = openid profile rabbitmq.tag:management
 </pre>
-- Because there is only one OAuth2 server, both resources share the same `provider_url`:
+* Because there is only one OAuth2 server, both resources share the same `provider_url`:
 <pre class="lang-ini">
 management.oauth_provider_url = http://0.0.0.0:8081/realms/test
 </pre>
-- Each OAuth2 client, `rabbit_prod_mgt_ui` and `rabbit_dev_mgt_ui`, has been declared in Keycloak so that they can only emit tokens for their respective audience, be it `rabbit_prod` and `rabbit_dev` respectively.
+* Each OAuth2 client, `rabbit_prod_mgt_ui` and `rabbit_dev_mgt_ui`, has been declared in Keycloak so that they can only emit tokens for their respective audience, be it `rabbit_prod` and `rabbit_dev` respectively.
 
-<ol>
-<li>Go to <a href="http://localhost:15672">Management ui</a></li>
-<li>Select `RabbitMQ Production` resource</li>
-<li>Login as `prod_user`:`prod_user`</li>
-<li>Keycloak prompts you to authorize various scopes for `prod_user`</li>
-<li>You should now get redirected to the Management UI as `prod_user` user</li>
-</ol>
+Follow the steps:
+
+1. Go to the [Management UI](http://localhost:15672)
+1. Select `RabbitMQ Production` resource>
+1. Login as `prod_user`:`prod_user`
+1. Keycloak prompts you to authorize various scopes for `prod_user`
+1. You should now get redirected to the Management UI as `prod_user` user
 
 Now, logout and repeat the same steps for `dev_user` user. For this user, RabbitMQ has been configured to request only `rabbitmq.tag:management` scope.
 

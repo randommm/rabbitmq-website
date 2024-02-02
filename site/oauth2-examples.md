@@ -22,7 +22,7 @@ limitations under the License.
 This tutorial-style guide has two primary goals:
 
 1. Explore how applications and end users can [authenticate](./access-control.html) with RabbitMQ server using OAuth 2.0 protocol rather than the traditional username/password pairs or x.509 certificates.
-2. Explore what it takes to set up RabbitMQ Server with OAuth 2.0 authentication mechanism across several Authorization Servers.
+2. Explore what it takes to set up RabbitMQ Server with OAuth 2.0 authentication mechanism across several authorization servers.
 
 The guide is
 accompanied by [a public GitHub repository](https://github.com/rabbitmq/rabbitmq-oauth2-tutorial) which hosts all the scripts required to deploy the examples demonstrated on the guide.
@@ -69,9 +69,9 @@ accompanied by [a public GitHub repository](https://github.com/rabbitmq/rabbitmq
 
 ## <a id="getting-started-with-uaa-and-rabbitmq" class="anchor" href="#getting-started-with-uaa-and-rabbitmq">Getting started with UAA and RabbitMQ</a>
 
-To demonstrate OAuth 2.0 you need, at least, an OAuth 2.0 Authorization server and RabbitMQ appropriately configured for the chosen Authorization server. This guide uses [UAA](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) as Authorization Server to demonstrate basic and advanced configuration to access to the Management UI and various messaging protocols.
+To demonstrate OAuth 2.0 you need, at least, an OAuth 2.0 authorization server and RabbitMQ appropriately configured for the chosen authorization server. This guide uses [UAA](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) as authorization server to demonstrate basic and advanced configuration to access to the Management UI and various messaging protocols.
 
-This guide also demonstrates how to configure RabbitMQ to use other Authorization Servers besides [UAA](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) such as [KeyCloak](oauth2-examples-keycloak.html). The table of content of this guide has the full list of Authorization Servers.
+This guide also demonstrates how to configure RabbitMQ to use other authorization servers besides [UAA](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) such as [KeyCloak](oauth2-examples-keycloak.html). The table of content of this guide has the full list of authorization servers.
 
 Run the following two commands to start UAA and RabbitMQ configured for UAA:
 
@@ -86,7 +86,7 @@ The RabbitMQ Management UI can be configured with one of these two login modes:
 
 * [Service-Provider initiated logon](#service-provider-initiated-logon): this is the default and traditional OAuth 2.0 logon mode.
   When the user visits the RabbitMQ Management UI, it shows a button with the label `Click here to logon`. When the user clicks it,
-  the logon process starts by redirecting to the configured **Authorization Server**.
+  the logon process starts by redirecting to the configured **authorization server**.
 * [Identity-Provider initiated logon](#identity-provider-initiated-logon): this mode is opposite to the previous mode.
   The user must first access the RabbitMQ Management's `/login` endpoint with a token. If the token is valid, the user is allowed to access the RabbitMQ Management UI.
   This mode is very useful for Web sites which allow users to access the RabbitMQ Management UI with a single click.
@@ -363,8 +363,8 @@ in UAA does not have the required permissions. In our handcrafted token, you hav
 
 ### <a id="amqp10-protocol" class="anchor" href="#amqp10-protocol">AMQP 1.0 protocol</a>
 
-In this use case you are demonstrating a basic AMQP 1.0 application which reads, via an environment variable (`PASSWORD`),
-the JWT token that will use as password when authenticating with RabbitMQ.
+In this use case you are demonstrating a basic AMQP 1.0 application which reads a JWT token from the `PASSWORD` environment variable.
+The application then uses the token as a password when authenticating with RabbitMQ.
 
 Before testing a publisher and a subscriber application you need to build a local image for the
 basic AMQP 1.0 application by invoking this command:
@@ -372,12 +372,12 @@ basic AMQP 1.0 application by invoking this command:
 make build-amqp1_0-client
 </pre>
 
-Launch RabbitMQ with the following command. It will start RabbitMQ configured with UAA as its Authorization Server.
+Launch RabbitMQ with the following command. It will start RabbitMQ configured with UAA as its authorization server:
 <pre class="lang-bash">
 make start-rabbitmq
 </pre>
 
-Launch UAA.
+Launch UAA:
 <pre class="lang-bash">
 make start-uaa
 </pre>
@@ -391,7 +391,7 @@ make start-amqp1_0-publisher
 
 This section has been dedicated exclusively to explain what scopes you need in order to operate on **Topic Exchanges**.
 
-**NOTE**: None of the users and/or clients declared in any of Authorization servers provided by this tutorial have the
+**NOTE**: None of the users and/or clients declared in any of authorization servers provided by this tutorial have the
 appropriate scopes to operate on **Topic Exchanges**. In the [MQTT Protocol](#mqtt-protocol) section, the application used a hand-crafted token with the scopes to operate on **Topic Exchanges**.
 
 To bind and/or unbind a queue to/from a **Topic Exchange**, you need to have the following scopes:
@@ -408,7 +408,7 @@ To publish to a **Topic Exchange**, you need to have the following scope:
 > e.g. `rabbitmq.write:*/*/*`
 
 
-OAuth 2.0 authorisation backend supports variable expansion when checking permission on topics. It supports any JWT claim whose value is a plain string and the `vhost` variable. For example, if a user has connected with the token below against the vhost `prod` should have write permission to send to any exchanged starting with `x-prod-` and any routing key starting with `u-bob-`:
+OAuth 2.0 authorisation backend supports variable expansion when checking permission on topics. It supports any JWT claim whose value is a plain string and the `vhost` variable. For example, if a user has connected with the token below against the vhost `prod`, they should have write permission to send to any exchange starting with `x-prod-` and any routing key starting with `u-bob-`:
 
 <pre class="json">
 {
@@ -422,7 +422,7 @@ OAuth 2.0 authorisation backend supports variable expansion when checking permis
 
 ### <a id="use-custom-scope-field" class="anchor" href="#use-custom-scope-field">Use a Custom Scope Field</a>
 
-There are some Authorization servers which cannot include RabbitMQ scopes into the standard
+There are some authorization servers which cannot include RabbitMQ scopes into the standard
 JWT `scope` field. Instead, they can include RabbitMQ scopes in a custom JWT scope of their choice.
 
 It is possible to configure RabbitMQ with a different field to look for scopes as shown below:

@@ -18,13 +18,11 @@ The first step in establishing that trust is by **creating your app** with the i
 
 Once you have logged onto your account in [Okta](https://www.okta.com), follow below steps:
 
-<ol>
-<li>In the Admin Console, go to Applications.</li>
-<li>Click Create App Integration.</li>
-<li>To create an OIDC app integration, select OIDC - OpenID Connect as the Sign-in method.</li>
-<li>Choose the type of application to integrate with Okta. Select Web Application, Single-Page Application, or Native Application. In our use case it is Single-Page Application(SPA).</li>
-<li>Click Next. </li>
-</ol>
+1. In the Admin Console, go to Applications.
+1. Click Create App Integration.
+1. To create an OIDC app integration, select OIDC - OpenID Connect as the Sign-in method.
+1. Choose the type of application to integrate with Okta. Select Web Application, Single-Page Application, or Native Application. In our use case it is Single-Page Application(SPA).
+1. Click Next.
 
 The App Integration Wizard for OIDC has three sections:
 
@@ -63,7 +61,7 @@ Here are the steps to create scopes for `admin` and `dev` groups using the defau
 
 6. Save your changes.
 
-And below are the steps to create claim for **role** to distinguish `admin` and `dev` groups when authenticating using the default authorization server in Okta:
+And below are the steps to create a claim for **role** to distinguish `admin` and `dev` groups when authenticating using the default authorization server in Okta:
 
 1. Log in to your Okta account and navigate to the **Authorization Servers** tab in the Okta Console under **Security-> API**.
 
@@ -131,8 +129,8 @@ The configuration on Okta side is done. You now have to configure RabbitMQ to us
 
 Update it with the following values (you should have noted these in the previous steps):
 
-  - **{okta-domain-name}** associated to your okta domain name>.
-  - **okta_client_app_ID** associated to the okta app that you registered in okta for rabbitMQ.
+  - **{okta-domain-name}** associated to your okta domain name.
+  - **{okta_client_app_ID}** associated to the okta app that you registered in okta for rabbitMQ.
 
 
 ## Start RabbitMQ
