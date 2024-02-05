@@ -20,9 +20,7 @@ limitations under the License.
 Demonstrate how to authenticate using OAuth 2.0 protocol
 and Azure Active Directory as Authorization Server using the following flows:
 
-* Access management UI via a browser :ballot_box_with_check:
-* Access management rest api :construction:
-* Access AMQP protocol :construction:
+* Access management UI via a browser
 
 ## Prerequisites to follow this guide
 

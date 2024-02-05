@@ -3,7 +3,7 @@
 Demonstrate how to authenticate using OAuth 2.0 protocol
 and Okta as Authorization Server using the following flows:
 
-1. Access management ui via a browser :ballot_box_with_check:
+1. Access management ui via a browser
 
 ## Prerequisites to follow this guide
 

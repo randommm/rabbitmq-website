@@ -417,7 +417,7 @@ The second scenario is when the management UI session exceeds the maximum allowe
 
 ### <a id="csp-header" class="anchor" href="#csp-header">Special attention to CSP header `connect-src`</a>
 
-To support the OAuth 2.0 protocol, RabbitMQ makes asynchronous REST calls to the [OpenId Connect Discovery endpoint](#Configure-OpenID-Connect-Discovery-endpoint). If you override the default [CSP headers](#csp), you have to make sure that the `connect-src` CSP directive whitelists the [OpenId Connect Discovery endpoint](#Configure-OpenID-Connect-Discovery-endpoint).
+To support the OAuth 2.0 protocol, RabbitMQ makes asynchronous REST calls to the [OpenId Connect Discovery endpoint](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfigurationRequest). If you override the default [CSP headers](#csp), you have to make sure that the `connect-src` CSP directive whitelists the [OpenId Connect Discovery endpoint](https://openid.net/specs/openid-connect-discovery-1_0.html#ProviderConfigurationRequest).
 
 For instance, if you configured the CSP header with the value `default-src 'self'`, you are, by default, setting `connect-src 'self'` which means you are denying RabbitMQ access to any external endpoint; hence disabling OAuth 2.0.
 
