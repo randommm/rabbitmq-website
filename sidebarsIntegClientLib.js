@@ -17,6 +17,11 @@ const sidebars = {
     {
       type: 'doc',
       id: 'index',
+      label: 'Integrating with Client Libraries',
+    },
+    {
+      type: 'doc',
+      id: 'clients',
       label: 'Client Documentation',
     },
     {
