@@ -677,8 +677,8 @@ const sidebars = {
           },
           {
             type: 'link',
-            label: 'Getting Started Tutorials',
-            href: '/tutorials'
+            label: 'Integrating with Client Libraries',
+            href: '/integrate-withclientlib'
           },
         ],
       }, 
