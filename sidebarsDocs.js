@@ -418,7 +418,7 @@ const sidebars = {
     },
     
 
-    
+
     {
       type: 'category',
       label: 'Configuration and Administration',
@@ -674,6 +674,11 @@ const sidebars = {
             type: 'doc',
             id: 'sender-selected',
             label: 'Sender-selected Distribution',
+          },
+          {
+            type: 'link',
+            label: 'Getting Started Tutorials',
+            href: '/tutorials'
           },
         ],
       }, 

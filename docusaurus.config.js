@@ -115,6 +115,15 @@ const config = {
         sidebarPath: './sidebarsReleaseInfo.js',
       },
     ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'integ-with-client-lib',
+        path: 'integ-with-client-lib',
+        routeBasePath: 'integ-with-client-lib',
+        sidebarPath: './sidebarsIntegClientLib.js',
+      },
+    ],
   ],
 
   themeConfig:
