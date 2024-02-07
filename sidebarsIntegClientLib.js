@@ -16,7 +16,7 @@ const sidebars = {
   integClientLibSidebar: [
     {
       type: 'doc',
-      id: 'clients',
+      id: 'index',
       label: 'Client Documentation',
     },
     {
