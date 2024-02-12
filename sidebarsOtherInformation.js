@@ -13,33 +13,39 @@
 
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
-  releaseInfoSidebar: [
+  otherInformationSidebar: [
     {
       type: 'doc',
       id: 'index',
-      label: 'Release Information',
+      label: 'Other Information',
     },
     {
       type: 'doc',
-      id: 'changelog',
-      label: 'Change Log and Release Notes',
+      id: 'amqp-0-9-1-reference',
+      label: 'AMQP 0-9-1 Complete Reference Guide',
     },
     {
       type: 'doc',
-      id: 'news',
-      label: 'Project Announcements',
+      id: 'uri-spec',
+      label: 'AMQP RabbitMQ URI Specification',
     },
     {
       type: 'doc',
-      id: 'deprecated-and-removed',
-      label: 'Deprecated and Removed Features',
+      id: 'build-java-client',
+      label: 'Building the Java Client',
     },
     {
       type: 'doc',
-      id: 'versions',
-      label: 'Currently Supported RabbitMQ Release Series',
+      id: 'build-dotnet-client',
+      label: 'Building the .NET Client',
+    },
+    {
+      type: 'doc',
+      id: 'build-erlang-client',
+      label: 'Building the Erlang Client',
     },
   ],
 };
 
 export default sidebars;
+    

@@ -118,10 +118,19 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'integrate-withclientlib',
-        path: 'integrate-withclientlib',
-        routeBasePath: 'integrate-withclientlib',
+        id: 'integrate-with-client-libraries',
+        path: 'integrate-with-client-libraries',
+        routeBasePath: 'integrate-with-client-libraries',
         sidebarPath: './sidebarsIntegClientLib.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'other-information',
+        path: 'other-information',
+        routeBasePath: 'other-information',
+        sidebarPath: './sidebarsOtherInformation.js',
       },
     ],
   ],

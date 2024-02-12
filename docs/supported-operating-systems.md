@@ -1,5 +1,5 @@
 ---
-title: Deprecated and Removed Features
+title: Operating Systems RabbitMQ can be Installed On
 ---
 <!--
 Copyright (c) 2005-2024 Broadcom. All Rights Reserved. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
@@ -18,5 +18,5 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# Deprecated and Removed Features
+# Operating Systems RabbitMQ can be Installed On
 
