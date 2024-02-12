@@ -38,7 +38,6 @@ const sidebars = {
       id: 'download',
       label: 'How Do I Get RabbitMQ',
     },
-// PAULA START OF MAIN TOC - INSTALL AND UPGRADE
     {
       type: 'category',
       label: 'Install and Upgrade',
@@ -64,12 +63,10 @@ const sidebars = {
        {
          type: 'category',
          label: 'Supported Operating Systems',
-         link: {type: 'doc', id: 'supported-operating-systems'},
          items: [
          {
           type: 'category',
           label: 'Linux/Unix',
-          link: {type: 'doc', id: 'linux-unix'},
           items: [
                   {
                   type: 'doc',
@@ -96,7 +93,6 @@ const sidebars = {
               {
                 type: 'category',
                 label: 'MacOS',
-                link: {type: 'doc', id: 'mac-os'},
                 items: [
                         {
                         type: 'doc',
@@ -112,7 +108,6 @@ const sidebars = {
                   },
            ],
          },
-
          {
           type: 'category',
           label: 'Install Instructions',
@@ -158,33 +153,9 @@ const sidebars = {
           id: 'reliability',
           label: 'Reliable Delivery of Messages and Data Safety',
         },
-    
-      {
-        type: 'category',
-        label: 'Consuming Messages',
-        link: {type: 'doc', id: 'admin-guide'},
-        items: [
-          {
-            type: 'doc',
-            id: 'consumers',
-            label: 'Describing Consumers',
-          },
-          {
-            type: 'doc',
-            id: 'consumer-cancel',
-            label: 'Consumer Cancellation Notification',
-          },
-          {
-            type: 'doc',
-            id: 'consumer-prefetch',
-            label: 'Consumer Prefetch',
-          },
-        ],
-      },
-      {
+        {
         type: 'category',
         label: 'Publishing Messages',
-        link: {type: 'doc', id: 'admin-guide'},
         items: [
           {
             type: 'doc',
@@ -204,6 +175,33 @@ const sidebars = {
         ],
       },
       {
+        type: 'category',
+        label: 'Consuming Messages',
+        link: {type: 'doc', id: 'admin-guide'},
+        items: [
+          {
+            type: 'doc',
+            id: 'consumers',
+            label: 'Describing Consumers',
+          },
+          {
+            type: 'doc',
+            id: 'consumer-cancel',
+            label: 'Consumer Cancellation Notifications',
+          },
+          {
+            type: 'doc',
+            id: 'consumer-prefetch',
+            label: 'Consumer Prefetch',
+          },
+          {
+            type: 'doc',
+            id: 'consumer-priority',
+            label: 'Consumer Priorites',
+          },
+        ],
+      },
+      {
         type: 'doc',
         id: 'confirms',
         label: 'Consumer Acknowledgements and Publisher Confirms',
@@ -211,7 +209,6 @@ const sidebars = {
       {
         type: 'category',
         label: 'Working with High Availability Queues and Streams',
-        link: {type: 'doc', id: 'admin-guide'},
         items: [
           {
             type: 'doc',
@@ -267,8 +264,19 @@ const sidebars = {
       },
       {
         type: 'category',
-        label: 'Working with Plugins',
+        label: 'Clustering',
         link: {type: 'doc', id: 'clustering'},
+        items: [
+          {
+            type: 'doc',
+            id: 'cluster-formation',
+            label: 'Cluster Formation and Peer Discovery',
+          },
+        ]
+      },
+      {
+        type: 'category',
+        label: 'Working with Plugins',
         items: [
           {
             type: 'doc',
@@ -297,11 +305,6 @@ const sidebars = {
             label: 'Federation Plugin',
             link: {type: 'doc', id: 'federation'},
             items: [
-              {
-                type: 'doc',
-                id: 'federated-exchanges',
-                label: 'Federated Exchanges',
-              },
               {
                 type: 'doc',
                 id: 'federated-exchanges',
@@ -535,7 +538,6 @@ const sidebars = {
       {
         type: 'category',
         label: 'Client Connections, Networking, and TLS',
-        link: {type: 'doc', id: 'admin-guide'},
         items: [
           {
             type: 'doc',
@@ -604,7 +606,6 @@ const sidebars = {
       {
         type: 'category',
         label: 'Resource Management',
-        link: {type: 'doc', id: 'clustering'},
         items: [
              {
              type: 'doc',
