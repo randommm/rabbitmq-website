@@ -1,5 +1,8 @@
+---
+title: Integrating with Client Libraries
+---
 <!--
-Copyright (c) 2005-2024 Broadcom. All Rights Reserved. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
+Copyright (c) 2024 Broadcom. All Rights Reserved. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
 
 All rights reserved. This program and the accompanying materials
 are made available under the terms of the under the Apache License,
@@ -15,16 +18,4 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 
-# Build Instructions
-
-## Overview {#overview}
-
-This section provides links to the build instructions
-of the RabbitMQ server and available client libraries:
-
-## RabbitMQ Server
-
- * [RabbitMQ server](./build-server)
- * [Java client library](./build-java-client)
- * [.NET client library](./build-dotnet-client)
- * [Erlang client library](./build-erlang-client)
+# Integrating with Client Libraries

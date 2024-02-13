@@ -44,6 +44,11 @@ const sidebars = {
       id: 'build-erlang-client',
       label: 'Building the Erlang Client',
     },
+    {
+      type: 'doc',
+      id: 'plugin-development',
+      label: 'Plugin Development',
+    },
   ],
 };
 

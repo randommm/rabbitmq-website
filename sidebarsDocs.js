@@ -284,11 +284,6 @@ const sidebars = {
             label: 'Installing Plugins',
           },
           {
-            type: 'doc',
-            id: 'plugin-development',
-            label: 'Plugin Development',
-          },
-          {
             type: 'category',
             label: 'Management Plugin',
             link: {type: 'doc', id: 'management'},
@@ -368,11 +363,6 @@ const sidebars = {
             type: 'doc',
             id: 'ldap',
             label: 'LDAP Plugin',
-          },
-          {
-            type: 'doc',
-            id: 'oauth2',
-            label: 'OAuth 2.0 Authentication/Authorisation Backend Plugin',
           },    
         ],  
       },
@@ -639,7 +629,7 @@ const sidebars = {
     {
       type: 'link',
       label: 'Integrating with Client Libraries',
-      href: '/integrate-with-client-libraries'
+      href: '/client-libraries'
     },
 
     {
