@@ -133,7 +133,7 @@ const sidebars = {
             {
               type: 'doc',
               id: 'blue-green-upgrade',
-              label: ' Upgrading RabbitMQ Using Blue-Green Deployment Strategy',
+              label: ' Blue-Green Upgrade',
             },
           ],
         },
@@ -146,12 +146,12 @@ const sidebars = {
         {
           type: 'doc',
           id: 'feature-flags',
-          label: 'Turning Features On and Off',
+          label: 'Features Flags',
         },
         {
           type: 'doc',
           id: 'reliability',
-          label: 'Reliable Delivery of Messages and Data Safety',
+          label: 'Reliability and Data Safety',
         },
         {
         type: 'category',
@@ -177,7 +177,6 @@ const sidebars = {
       {
         type: 'category',
         label: 'Consuming Messages',
-        link: {type: 'doc', id: 'admin-guide'},
         items: [
           {
             type: 'doc',
@@ -208,7 +207,7 @@ const sidebars = {
       },
       {
         type: 'category',
-        label: 'Working with High Availability Queues and Streams',
+        label: 'Queues and Streams',
         items: [
           {
             type: 'doc',
@@ -227,13 +226,13 @@ const sidebars = {
           },
           {
             type: 'doc',
-            id: 'classic-queues',
+            id: 'migrate-mcq-to-qq',
             label: 'Migrate Mirrored Classic Queues to Quorum Queues',
           },
           {
             type: 'doc',
             id: 'ttl',
-            label: 'Queue and Message TTL and the Expiration Feature',
+            label: 'Time-to-Live and Expiration',
           },
           {
             type: 'doc',
@@ -261,18 +260,6 @@ const sidebars = {
             label: 'Streams',
           },
         ],
-      },
-      {
-        type: 'category',
-        label: 'Clustering',
-        link: {type: 'doc', id: 'clustering'},
-        items: [
-          {
-            type: 'doc',
-            id: 'cluster-formation',
-            label: 'Cluster Formation and Peer Discovery',
-          },
-        ]
       },
       {
         type: 'category',

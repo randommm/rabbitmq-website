@@ -31,11 +31,6 @@ const sidebars = {
     },
     {
       type: 'doc',
-      id: 'deprecated-and-removed',
-      label: 'Deprecated and Removed Features',
-    },
-    {
-      type: 'doc',
       id: 'versions',
       label: 'Currently Supported RabbitMQ Release Series',
     },
