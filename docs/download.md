@@ -133,7 +133,7 @@ Other guides related to Kubernetes:
  * Quick download: <a href={`https://repo1.maven.org/maven2/com/rabbitmq/amqp-client/${JavaClientVersion()}/amqp-client-${JavaClientVersion()}.jar`}>Maven.org</a>
  * [API guide](/client-libraries/api-guide)
  * [API reference](https://rabbitmq.github.io/rabbitmq-java-client/api/current/) (JavaDoc)
- * [License and other information](./java-client)
+ * [License and other information](/client-libraries/java-client)
  * [Older versions](https://repo1.maven.org/maven2/com/rabbitmq/amqp-client/)
 
 ### Java [Stream Protocol](./streams) Client
@@ -149,7 +149,7 @@ Other guides related to Kubernetes:
  * On NuGet: [RabbitMQ .NET Client](https://www.nuget.org/packages/RabbitMQ.Client)
  * [API guide](/client-libraries/dotnet-api-guide)
  * [API reference](https://rabbitmq.github.io/rabbitmq-dotnet-client/)
- * [License and other information](./dotnet)
+ * [License and other information](/client-libraries/dotnet)
  * [Older versions](https://github.com/rabbitmq/rabbitmq-dotnet-client/releases)
 
 ### .NET/C# [Stream Protocol](./streams) Client
@@ -171,7 +171,7 @@ covering a variety of platforms and languages.
 For your convenience, we offer binary downloads of various
 plugins developed by the community.
 
- * [Description of available plugins](./community-plugins)
+ * [Description of available plugins](/other-information/community-plugins)
 
 ## Snapshot (Alpha) Builds
 

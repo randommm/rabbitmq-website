@@ -83,4 +83,4 @@ Some platforms are not supported and probably never will be:
  * Very memory-constrained systems (&lt; 32 MB of RAM)
 
 If your platform is on this list or you need assistance then
-please [contact VMware](./contact).
+please [contact VMware](/contact).
