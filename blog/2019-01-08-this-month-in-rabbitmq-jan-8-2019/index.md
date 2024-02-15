@@ -20,7 +20,7 @@ and great insights shared across the community. Read on!
 * Reactor RabbitMQ 1.0.0 GA [has been released](https://groups.google.com/forum/#!msg/rabbitmq-users/FJ4UgMrr3-Q/xQDEGxlrCAAJ). [Reactor RabbitMQ](https://github.com/reactor/reactor-rabbitmq) is a reactive API for RabbitMQ based on [Reactor](http://projectreactor.io) and RabbitMQ Java client. Reactor RabbitMQ goal is to enable messages to be published to and consumed from RabbitMQ using functional APIs with non-blocking back-pressure and very low overhead.
 * [Java client 5.5.2](https://groups.google.com/d/msg/rabbitmq-users/Wk1T3iZBJR4/Y4lLTGXVDgAJ) (for Java 8+) and [4.9.2](https://groups.google.com/d/msg/rabbitmq-users/8Gef5g-KNRU/o8mQEl7VDgAJ) (for Java 6 &amp; 7) have been released.
 * PerfTest 2.5.0 [has been released](https://groups.google.com/d/msg/rabbitmq-users/9AycV2eEC0s/UvE2StsrDwAJ) with lot of goodies: new publisher confirm latency metrics, dependency upgrades, new Linux native executable created with [GraalVM](https://www.graalvm.org/), and new Docker image.
-* New [doc guide on connections](/docs/connections)
+* New [doc guide on connections](/client-libraries/connections)
 
 ## Community Writings and Resources
 

@@ -246,8 +246,8 @@ Ctrl-C to stop it), so try running the sender from another terminal.
 
 While this tutorial strives to keep things simple and focus on explaining RabbitMQ
 concepts, it is important to call out something that is specific to PHP applications.
-In many cases PHP application will not be able to use [long-lived connections](/docs/connections#basics)
-that RabbitMQ assumes, creating a condition known as [high connection churn](/docs/connections#high-connection-churn).
+In many cases PHP application will not be able to use [long-lived connections](/client-libraries/connections#basics)
+that RabbitMQ assumes, creating a condition known as [high connection churn](/client-libraries/connections#high-connection-churn).
 
 To avoid this, PHP users are recommended to use [a special proxy](https://github.com/cloudamqp/amqproxy)
 in production when possible. The proxy avoids connection churn or at least significantly reduces it.
