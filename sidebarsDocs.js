@@ -262,6 +262,11 @@ const sidebars = {
         ],
       },
       {
+        type: 'doc',
+        id: 'channels',
+        label: 'Channels',
+      },
+      {
         type: 'category',
         label: 'Working with Plugins',
         items: [
@@ -360,43 +365,12 @@ const sidebars = {
       },
       {
         type: 'category',
-        label: 'Protocols',
-        link: {type: 'doc', id: 'protocols'},
+        label: 'Protocol Extensions',
         items: [
           {
-            type: 'link',
-            label: 'AMQP 0-9-1 Protocol',
-            href: '/tutorials/amqp-concepts'
-          },
-          {
-            type: 'doc',
-            id: 'protocol',
-            label: 'AMQP 0-9-1 Specification',
-          },
-          {
-            type: 'doc',
-            id: 'specification',
-            label: 'Differences between AMQP Protocol Versions',
-          },
-          {
-            type: 'doc',
-            id: 'channels',
-            label: 'Channels',
-          },
-          {
-            type: 'category',
-            label: 'Extensions',
-            link: {type: 'doc', id: 'extensions'},
-            items: [
-              {
-                type: 'doc',
-                id: 'extensions',
-               label: 'Protocol Extensions'
-              },
-              {
-                type: 'doc',
-                id: 'direct-reply-to',
-                label: 'Direct reply-to',
+          type: 'doc',
+          id: 'direct-reply-to',
+          label: 'Direct reply-to',
               },
               {
                 type: 'doc',
@@ -422,8 +396,6 @@ const sidebars = {
           }, 
         ],
       },
-    ],
-  },
   {
     type: 'category',
     label: 'Configuration and Administration',
