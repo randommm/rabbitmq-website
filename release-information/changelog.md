@@ -25,7 +25,7 @@ limitations under the License.
 RabbitMQ release notes are [available on GitHub](https://github.com/rabbitmq/rabbitmq-server/releases).
 See <a href="./versions">RabbitMQ support timeline</a> to find out what release series
 are supported.
-For guidance on upgrades, see the [Upgrade](./upgrade) and [Blue/Green Deployment Upgrade](./blue-green-upgrade) guides.
+For guidance on upgrades, see the [Upgrade](/docs/upgrade) and [Blue/Green Deployment Upgrade](/docs/blue-green-upgrade) guides.
 
 [Java client](https://github.com/rabbitmq/rabbitmq-java-client/releases), [Java Stream client](https://github.com/rabbitmq/rabbitmq-stream-java-client/releases),
 [.NET client](https://github.com/rabbitmq/rabbitmq-dotnet-client/releases), and [.NET Stream client](https://github.com/rabbitmq/rabbitmq-stream-dotnet-client/releases) are
@@ -1962,7 +1962,7 @@ released separately.
         <li><a href="./which-erlang">Minimum required Erlang version</a> is now 21.3</li>
         <li><a href="./quorum-queues">Quorum Queues</a></li>
         <li><a href="./monitoring">Monitoring</a> improvements: built-in <a href="./prometheus">Prometheus support</a> with a set of Grafana dashboards</li>
-        <li><a href="./feature-flags">Feature flags</a> and support for mixed version clusters <a href="./upgrade">during upgrades</a></li>
+        <li><a href="./feature-flags">Feature flags</a> and support for mixed version clusters <a href="/docs/upgrade">during upgrades</a></li>
         <li>New diagnostics CLI tools, new <a href="./monitoring#health-checks">health checks</a></li>
         <li><a href="./consumers#single-active-consumer">Single Active Consumer</a></li>
         <li>New <a href="https://github.com/rabbitmq/rabbitmq-auth-backend-oauth2">authentication and authorisation backend</a> that uses OAuth 2.0 (JWT) tokens and scopes</li>
