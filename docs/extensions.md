@@ -80,4 +80,4 @@ Some features that were in AMQP 0-8 were deprecated in AMQP
 couple of tiny behaviour changes that improve usability of
 the product. Please refer to the [spec differences](./spec-differences) page.
 
-There's also an [AMQP 0-9-1 Errata page](./amqp-0-9-1-errata) which explains how various
+There's also an [AMQP 0-9-1 Errata page](/other-information/amqp-0-9-1-errata) which explains how various

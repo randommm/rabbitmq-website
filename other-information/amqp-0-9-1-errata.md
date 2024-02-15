@@ -1,6 +1,6 @@
 ---
 title: AMQP 0-9-1 Errata
-displayed_sidebar: docsSidebar
+displayed_sidebar: otherInformationSidebar
 ---
 <div id="left-content">
     <p class="intro">

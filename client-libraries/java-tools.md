@@ -34,7 +34,7 @@ PerfTest Documentation:
 
 ## PerfTest for Streams (RabbitMQ Stream Protocol) {#stream-load-testing}
 
-There is a separate version of [PerfTest for streams](https://github.com/rabbitmq/rabbitmq-stream-perf-test/) that uses [RabbitMQ Stream Protocol](./stream) internally.
+There is a separate version of [PerfTest for streams](https://github.com/rabbitmq/rabbitmq-stream-perf-test/) that uses [RabbitMQ Stream Protocol](/docs/stream) internally.
 
 Stream PerfTest Documentation:
 
@@ -45,7 +45,7 @@ Stream PerfTest Documentation:
 ## Tracer {#tracer}
 
 The tracer is a very basic, very simple AMQP 0-9-1 protocol analyzer, similar in
-purpose to [Wireshark](./amqp-wireshark).
+purpose to [Wireshark](/other-information/amqp-wireshark).
 Use it with the `runtracer` or `runtracer.bat` script:
 
 ```bash

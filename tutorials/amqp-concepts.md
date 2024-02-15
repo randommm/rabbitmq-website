@@ -600,7 +600,7 @@ AMQP 0-9-1 has several extension points:
    can use. For example, [per-queue message TTL](/docs/ttl) in RabbitMQ is implemented this way.
  * Broker-specific extensions to the protocol. See, for example,
    [extensions that RabbitMQ implements](/docs/extensions).
- * [New AMQP 0-9-1 method classes](/docs/amqp-0-9-1-quickref#class.confirm) can be introduced.
+ * [New AMQP 0-9-1 method classes](/other-information/amqp-0-9-1-quickref#class.confirm) can be introduced.
  * Brokers can be extended with [additional plugins](/docs/plugins),
    for example, the [RabbitMQ management](/docs/management)
    frontend and HTTP API are implemented as a plugin.

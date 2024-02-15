@@ -26,8 +26,8 @@ This guide covers an Erlang client for RabbitMQ (<a href="/tutorials/amqp-concep
 
 This user guide assumes that the reader is familiar with <a href="/tutorials/amqp-concepts">basic concepts of AMQP 0-9-1</a>.
 
-Refer to guides on [connections](/client-libraries/connections), [channels](./channels), [queues](./queues),
-[publishers](./publishers), and [consumers](./consumers) to learn about those
+Refer to guides on [connections](/client-libraries/connections), [channels](/docs/channels), [queues](/docs/queues),
+[publishers](/docs/publishers), and [consumers](/docs/consumers) to learn about those
 key RabbitMQ concepts in more details.
 
 Some topics covered in this guide include
@@ -76,7 +76,7 @@ The basic usage of the client follows these broad steps:
 1. Make sure the `amqp_client` Erlang application is started
 2. Establish a [connection](/client-libraries/connections) to a RabbitMQ node
 3. Open a new channel on the connection
-4. Execute [AMQP 0-9-1 commands](./amqp-0-9-1-quickref) with a channel such as
+4. Execute [AMQP 0-9-1 commands](/other-information/amqp-0-9-1-quickref) with a channel such as
    declaring exchanges and queues, defining bindings between them, publishing messages,
    registering consumers (subscribing), and so on
 5. Register optional event handlers such as [returned message handler](#returns)
@@ -103,7 +103,7 @@ The main two modules in the client library are:
  * `amqp_channel`, which exposes most AMQP 0-9-1 operations such as queue declaration
    or consumer registration
 
-Once a connection has been established and successfully [authenticated](./access-control),
+Once a connection has been established and successfully [authenticated](/docs/access-control),
 and a channel has been opened, an application will typically use the
 `amqp_channel:call/{2,3}` and `amqp_channel:cast/{2,3}` functions
 together with AMQP 0-9-1 protocol method records to perform most operations.
@@ -138,7 +138,7 @@ connections. This communication method assumes that the application that uses
 the client runs on the same Erlang cluster as RabbitMQ nodes.
 
 The use of direct client should be limited to applications that are deployed
-side by side with RabbitMQ. [Shovel](./shovel) and [Federation](./federation)
+side by side with RabbitMQ. [Shovel](/docs/shovel) and [Federation](/docs/federation)
 plugins are two examples of such applications.
 
 In most other cases, developers should prefer the more traditional network client covered above.
@@ -264,7 +264,7 @@ set to an `#amqp_params_direct` record:
 ```
 
 Credentials are optional for direct connections, since Erlang
-distribution relies on [a shared secret](./clustering#erlang-cookie), the Erlang cookie, for authentication.
+distribution relies on [a shared secret](/docs/clustering#erlang-cookie), the Erlang cookie, for authentication.
 
 If a username and password are provided then they will be used for authentication and
 made available to authentication backends.
@@ -274,7 +274,7 @@ unconditionally.
 
 If neither username nor password are provided, then the connection will be considered
 to be from a fully trusted user which can connect to any virtual host and has
-full [permissions](./access-control).
+full [permissions](/docs/access-control).
 
 The `#amqp_params_direct` record sets the following default values:
 
@@ -320,13 +320,13 @@ Diverging from the spec, if the hostname is omitted, the
 connection is assumed to be direct and an `#amqp_params_direct{}`
 record is returned.  In addition to the standard host, port, user,
 password and vhost parameters, extra parameters may be specified
-via the query string (e.g. "?heartbeat=5" to configure a [heartbeat timeout](./heartbeats)).
+via the query string (e.g. "?heartbeat=5" to configure a [heartbeat timeout](/docs/heartbeats)).
 
 
 ## Creating Channels {#channels}
 
 Once a connection has been established, use the `amqp_connection` module
-to open one or more [channels](./channels) that will be used
+to open one or more [channels](/docs/channels) that will be used
 to define the topology, publish and consume messages:
 
 ```erlang
@@ -378,7 +378,7 @@ Declare = #'exchange.declare'{exchange = &lt;&lt;"my_exchange"&gt;&gt;},
 #'exchange.declare_ok'{} = amqp_channel:call(Channel, Declare)
 ```
 
-Similarly, a [transient](./queues#durability) queue called `my_queue` is created by this code:
+Similarly, a [transient](/docs/queues#durability) queue called `my_queue` is created by this code:
 
 ```erlang
 Declare = #'queue.declare'{queue = &lt;&lt;"my_queue"&gt;&gt;},
@@ -479,7 +479,7 @@ amqp_channel:cast(Channel, Publish, #amqp_msg{payload = Payload})
 ```
 
 By default, the properties field of the `#amqp_msg{}` record contains
-a minimal set of [message properties](./publishers#message-properties) as a `#'P_basic'{}` properties record.
+a minimal set of [message properties](/docs/publishers#message-properties) as a `#'P_basic'{}` properties record.
 
 If an application needs to override any of the defaults, for example,
 to send persistent messages, the `#amqp_msg{}` needs to
@@ -493,15 +493,15 @@ Msg = #amqp_msg{props = Props, payload = Payload},
 amqp_channel:cast(Channel, Publish, Msg)
 ```
 
-Full list of [message properties](./publishers#message-properties) can be found
+Full list of [message properties](/docs/publishers#message-properties) can be found
 in the Publishers guide.
 
 The AMQP 0-9-1 `#'basic.publish'` method is [asynchronous](#call-or-cast):
 the server will not send a response to it. However, clients can opt in
-to have [unroutable messages](./publishers#unroutable) returned to them.
+to have [unroutable messages](/docs/publishers#unroutable) returned to them.
 This is described in the section on [return message handlers](#returns).
 
-The above example does not use [Publisher Confirms](./confirms).
+The above example does not use [Publisher Confirms](/docs/confirms).
 To await for all outstanding publishes to be confirmed after publishing
 a batch of messages, use `amqp_channel:wait_for_confirms/2` function.
 It will return a `true` if all outstanding publishes were successfully confirmed
@@ -580,7 +580,7 @@ notification and then proceeds to wait for delivery messages to
 arrive in its process mailbox.
 
 When messages are received, the loop does something useful with the message and
-sends an [acknowledgement](./confirms) back to the server.
+sends an [acknowledgement](/docs/confirms) back to the server.
 If the consumer is cancelled, a cancellation notification will be sent to the
 consumer process. In this scenario, the receive loop just
 exits. If the application does not wish to explicitly acknowledge
@@ -671,7 +671,7 @@ amqp_channel:call(Channel, #'basic.qos'{prefetch_count = Prefetch})
 ```
 
 Applications are recommended to use a prefetch. Learn more in the
-[Publisher Confirms and Consumer Acknowledgements guide](./confirms).
+[Publisher Confirms and Consumer Acknowledgements guide](/docs/confirms).
 
 
 ## Blocked Connections {#blocked}
@@ -765,8 +765,8 @@ will not produce a response for them.
 ## A Basic Example {#example}
 
 Below is a complete example of basic usage of the library. For the sake of simplicity
-it does not use [publisher confirms](./confirms) and uses a [polling consumer](#polling) which performs
-[manual acknowledgements](./confirms).
+it does not use [publisher confirms](/docs/confirms) and uses a [polling consumer](#polling) which performs
+[manual acknowledgements](/docs/confirms).
 
 ```erlang
 -module(amqp_example).

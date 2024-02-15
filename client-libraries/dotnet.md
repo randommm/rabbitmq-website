@@ -102,7 +102,7 @@ targets what .NET standard (or .NET framework) version.
 ### Licensing {#licensing}
 
 The library is [open-source](https://github.com/rabbitmq/rabbitmq-dotnet-client),
-and is dual-licensed under the [the Apache License v2](https://www.apache.org/licenses/LICENSE-2.0) and [the Mozilla Public License v2.0](./mpl).
+and is dual-licensed under the [the Apache License v2](https://www.apache.org/licenses/LICENSE-2.0) and [the Mozilla Public License v2.0](/release-information/mpl).
 
 This means that the user can consider the library to be licensed under any of the licenses from the list above.
 For example, the user may choose the Apache Public License 2.0 and include this client into

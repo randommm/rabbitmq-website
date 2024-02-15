@@ -24,15 +24,15 @@ limitations under the License.
 
 This guide covers various topics related to connections except for
 network tuning or most networking-related topics. Those
-are covered by the [Networking](./networking) and [Troubleshooting Networking](./troubleshooting-networking) guides.
+are covered by the [Networking](/docs/networking) and [Troubleshooting Networking](/docs/troubleshooting-networking) guides.
 
 RabbitMQ supports several protocols:
 
- * [AMQP 0-9-1](/other-information/specification) with [extensions](./extensions)
+ * [AMQP 0-9-1](/other-information/specification) with [extensions](/docs/extensions)
  * [AMQP 1.0](https://www.amqp.org/resources/download)
- * [RabbitMQ Stream Protocol](./stream)
- * [MQTT](./mqtt) 3.1 through 5.0
- * [STOMP](./stomp) 1.0 through 1.2
+ * [RabbitMQ Stream Protocol](/docs/stream)
+ * [MQTT](/docs/mqtt) 3.1 through 5.0
+ * [STOMP](/docs/stomp) 1.0 through 1.2
 
 Note that despite the similarities in naming, AMQP 0-9-1 and AMQP 1.0 are different protocols, not
 different versions of the same protocol.
@@ -40,7 +40,7 @@ different versions of the same protocol.
 Many topics in this guide are equally applicable to all protocols. When that's not the case, the guide tries
 to highlight protocol-specific features and practices.
 
-[Channels](./channels) is a closely related concept in AMQP 0-9-1 which is also covered
+[Channels](/docs/channels) is a closely related concept in AMQP 0-9-1 which is also covered
 in a separate guide.
 
 This guide covers:
@@ -71,28 +71,28 @@ Where the difference matters, a more specific term is used (e.g. "application").
 All protocols supported by RabbitMQ are TCP-based and assume long-lived connections (a new connection
 is not opened per protocol operation) for efficiency. One client library connection uses a single
 TCP connection. In order for a client to successfully connect, target RabbitMQ node must allow for
-connections on a [certain protocol-specific port](./networking).
+connections on a [certain protocol-specific port](/docs/networking).
 
 After a client [connects](#lifecycle) and successfully authenticates with a RabbitMQ node, it can
 publish and consume messages, define topology and perform other operations that are provided in the protocol
 and supported both by the client library and the target RabbitMQ node.
 
-Since connections are meant to be long-lived, clients usually [consume messages](./consumers) by registering
+Since connections are meant to be long-lived, clients usually [consume messages](/docs/consumers) by registering
 a subscription and having messages delivered (pushed) to them instead of polling. Clients
 that cannot keep a long-lived connection can use [a special proxy](https://github.com/cloudamqp/amqproxy) to help reduce [connection churn](#high-connection-churn).
 
 When a connection is no longer necessary, applications must close them to conserve resources.
 Apps that fail to do it run the risk of eventually exhausting its target node of resources.
 
-Operating systems have a [limit around how many TCP connections (sockets) a single process can have open](./networking#open-file-handle-limit)
+Operating systems have a [limit around how many TCP connections (sockets) a single process can have open](/docs/networking#open-file-handle-limit)
 simultaneously. The limit is often sufficient for development and some QA environments.
-[Production environments](./production-checklist) must be configured to use a higher limit in order to support
+[Production environments](/docs/production-checklist) must be configured to use a higher limit in order to support
 a larger number of concurrent client connections.
 
 ### Protocol Differences
 
 Different messaging protocols use different ports. Ports also vary for plain TCP and TLS-enabled connections.
-The [Networking guide](./networking#ports) covers all ports used by RabbitMQ depending on what protocols are enabled, whether TLS
+The [Networking guide](/docs/networking#ports) covers all ports used by RabbitMQ depending on what protocols are enabled, whether TLS
 is used and so on.
 
 #### AMQP 0-9-1
@@ -118,8 +118,8 @@ involves a number of steps:
  * The library resolves the hostname to one or more IP addresses
  * The library opens a TCP connection to the target IP address and port
  * After the server has accepted the TCP connection, protocol-specific negotiation procedure is performed
- * The server then [authenticates](./access-control) the client
- * The client now can perform operations, each of which involves an [authorisation check](./access-control) by the server.
+ * The server then [authenticates](/docs/access-control) the client
+ * The client now can perform operations, each of which involves an [authorisation check](/docs/access-control) by the server.
  * The client retains the connections for as long as it needs to communicate with RabbitMQ
 
 This flow doesn't change significantly from protocol to protocol but there are minor differences.
@@ -131,7 +131,7 @@ This flow doesn't change significantly from protocol to protocol but there are m
 AMQP 0-9-1 has a [model](/tutorials/amqp-concepts) that includes connections and channels. Channels allow for
 connection multiplexing (having multiple logical connections on a "physical" or TCP one).
 
-The maximum number of [channels](./channels) that can be open on a connection simultaneously
+The maximum number of [channels](/docs/channels) that can be open on a connection simultaneously
 is negotiated by client and server at connection time. The client cannot be configured to allow for
 more channels than the server configured maximum.
 
@@ -169,8 +169,8 @@ Applications that use unencrypted connections will also send credentials as "cle
 Certain security scanners will report this as "AMQP Cleartext Authentication".
 The solution is to use TLS for those client connections.
 
-To learn more, please refer to the guides dedicated to TLS: [TLS for client connections](./ssl),
-[securing intra-cluster communication with TLS](./clustering-ssl) and [troubleshooting TLS](./troubleshooting-ssl).
+To learn more, please refer to the guides dedicated to TLS: [TLS for client connections](/docs/ssl),
+[securing intra-cluster communication with TLS](/docs/clustering-ssl) and [troubleshooting TLS](/docs/troubleshooting-ssl).
 
 
 ## Logging {#logging}
@@ -181,13 +181,13 @@ checks from flooding the logs.
 
 Successful authentication, clean and unexpected connection closure will also be logged.
 
-This topic is covered in more detail in the [Logging guide](./logging#logged-events).
+This topic is covered in more detail in the [Logging guide](/docs/logging#logged-events).
 
 
 ## Monitoring {#monitoring}
 
 Number of currently open client connections and connection opening/closure rates are important metrics
-of the system that should be [monitored](./monitoring). Monitoring them will help detect a number of
+of the system that should be [monitored](/docs/monitoring). Monitoring them will help detect a number of
 problems that are common in messaging-based system:
 
  * Connection leaks
@@ -200,13 +200,13 @@ Both problems eventually lead to node exhaustion of [resources](#resource-usage)
 A connection leak is a condition under which an application repeatedly opens connections without closing them,
 or at least closing only some of them.
 
-Connection leaks eventually exhaust the node (or multiple target nodes) of [file handles](./networking#open-file-handle-limit),
+Connection leaks eventually exhaust the node (or multiple target nodes) of [file handles](/docs/networking#open-file-handle-limit),
 which means any new inbound client, peer or CLI tool connection will be rejected. A build-up in the number of concurrent
 connections also increases node's memory consumption.
 
 #### Relevant Metrics
 
-[Management UI](./management) provides a chart of the total number of connections opened cluster-wide:
+[Management UI](/docs/management) provides a chart of the total number of connections opened cluster-wide:
 
 <img class="screenshot" src="img/monitoring/connections/mgmt-ui-global-connection-count.png" alt="Global connection count in management UI" title="Global connection count in management UI" />
 
@@ -232,7 +232,7 @@ to identify what app leaks connections or uses them in a suboptimal way.
 In many applications that use long-lived connections and do not leak them the number of connections
 grows on application start and then moderates (stays mostly stable with little fluctuation).
 
-[Management UI](./management) provides a chart on the rate of newly opened connections as of [RabbitMQ 3.7.9](./changelog).
+[Management UI](/docs/management) provides a chart on the rate of newly opened connections as of [RabbitMQ 3.7.9](/release-information/changelog).
 Below is a chart that demonstrates a fairly low new connection rate:
 
 <img class="screenshot" src="img/monitoring/connections/mgmt-ui-node-connection-churn.png" alt="Node connection churn in management UI" title="Node connection churn in management UI" />
@@ -245,7 +245,7 @@ its rate of closed connection is consistently high. This usually means that an a
 uses short lived connections. While with some workloads this scenario is difficult to avoid,
 long lived connections should be used instead when possible.
 
-RabbitMQ collects metrics on connection churn and exposes them via [Prometheus and Grafana](./prometheus) as well as [management UI](./management) churn rate chart.
+RabbitMQ collects metrics on connection churn and exposes them via [Prometheus and Grafana](/docs/prometheus) as well as [management UI](/docs/management) churn rate chart.
 Below is a chart that demonstrates a fairly low connection churn with a comparable number of connections open and closed
 in the given period of time:
 
@@ -260,7 +260,7 @@ Some clients and runtimes (notably PHP) do not use long-lived connections and hi
 churn rates are expected from them. A [specialized proxy](https://github.com/cloudamqp/amqproxy) should be
 used with those clients to mitigate the churn they naturally create.
 
-Environments that experience high connection churn require [TCP stack tuning to avoid resource exhaustion](./networking#dealing-with-high-connection-churn)
+Environments that experience high connection churn require [TCP stack tuning to avoid resource exhaustion](/docs/networking#dealing-with-high-connection-churn)
 under churn.
 
 
@@ -268,11 +268,11 @@ under churn.
 
 Every connection consumes memory and one file handle on the target RabbitMQ node.
 
-Most of the memory is used by connection's TCP buffers. Their size can be [reduced](./networking#tuning-for-large-number-of-connections-tcp-buffer-size)
+Most of the memory is used by connection's TCP buffers. Their size can be [reduced](/docs/networking#tuning-for-large-number-of-connections-tcp-buffer-size)
 significantly, which leads to significant per-connection memory consumption savings
 at the cost of a comparable reduction in connection throughput.
 
-The maximum number of file handles a RabbitMQ node can have open is [limited by the kernel](./networking#open-file-handle-limit) and must
+The maximum number of file handles a RabbitMQ node can have open is [limited by the kernel](/docs/networking#open-file-handle-limit) and must
 be raised in order to support a large number of connections.
 
 
@@ -301,35 +301,35 @@ Increasing the interval value to 30-60s will reduce CPU footprint and peak memor
 This comes with a downside: with the value in the example above, metrics of said entities
 will refresh every 60 seconds.
 
-This can be perfectly reasonable in an [externally monitored](./monitoring#monitoring-frequency) production system
+This can be perfectly reasonable in an [externally monitored](/docs/monitoring#monitoring-frequency) production system
 but will make management UI less convenient to use for operators.
 
-The [Networking guide](./networking) has a section dedicated to [tuning for a large number of concurrent connections](./networking#tuning-for-large-number-of-connections).
+The [Networking guide](/docs/networking) has a section dedicated to [tuning for a large number of concurrent connections](/docs/networking#tuning-for-large-number-of-connections).
 It explains how to reduce per-connection memory footprint.
 
 
 ## TLS {#tls}
 
 Client connections can be encrypted with TLS. TLS also can be used as an additional
-or the primary way of authenticating clients. Learn more in the [TLS guide](./ssl).
+or the primary way of authenticating clients. Learn more in the [TLS guide](/docs/ssl).
 
 
 ## Flow Control {#flow-control}
 
 Connections that publish messages can outpace other parts of the system, most likely busy queues and queues
-that perform replication. When that happens, [flow control](./flow-control) is applied to
+that perform replication. When that happens, [flow control](/docs/flow-control) is applied to
 publishing connections. Connections that only consume messages **are not affected** by the flow control
 applied to publishers.
 
 It is therefore recommended that, when possible, publishers and consumers use separate connections
 so that consumers are isolated from potential flow control that may be applied to publishing connections,
-affecting [manual consumer acknowledgements](./confirms).
+affecting [manual consumer acknowledgements](/docs/confirms).
 
-With slower consumers that use [automatic acknowledgement mode](./confirms#acknowledgement-modes)
+With slower consumers that use [automatic acknowledgement mode](/docs/confirms#acknowledgement-modes)
 it is very likely that connections and channels will experience flow control when writing to
 the TCP socket.
 
-[Monitoring](./monitoring) systems can collect metrics on the number of connections in flow state.
+[Monitoring](/docs/monitoring) systems can collect metrics on the number of connections in flow state.
 Applications that experience flow control regularly may consider to use separate connections
 to publish and consume to avoid flow control effects on non-publishing operations (e.g. queue management).
 
@@ -351,7 +351,7 @@ framing or connection state violations. For example, if a channel with the same 
 more than once. After sending an error to the client, the connection is closed.
 
 Errors that can be corrected and retried are communicated
-using [channel exceptions](./channels#error-handling) ("soft errors").
+using [channel exceptions](/docs/channels#error-handling) ("soft errors").
 
 #### AMQP 1.0
 
@@ -378,7 +378,7 @@ This is a fundamental limitation of MQTT 3.1 design.
 Quite often MQTT clients are configured to automatically reconnect and retry operations, potentially
 creating loops of error triggering, connection storms and variations of the [thundering herd problem](https://en.wikipedia.org/wiki/Thundering_herd_problem).
 
-With MQTT, inspecting [server logs](./logging) and [monitoring connections](#monitoring) is therefore of particular
+With MQTT, inspecting [server logs](/docs/logging) and [monitoring connections](#monitoring) is therefore of particular
 importance.
 
 ## Client-Provided Connection Name {#client-provided-names}
@@ -389,9 +389,9 @@ RabbitMQ nodes have a limited amount of information about their clients:
  * the credentials used
 
 This information alone can make identifying applications and instances problematic, in particular when credentials can be
-shared and clients connect over a load balancer but [Proxy protocol](./networking#proxy-protocol) cannot be enabled.
+shared and clients connect over a load balancer but [Proxy protocol](/docs/networking#proxy-protocol) cannot be enabled.
 
-To make it easier to identify clients in [server logs](./logging) and [management UI](./management),
+To make it easier to identify clients in [server logs](/docs/logging) and [management UI](/docs/management),
 AMQP 0-9-1 client connections, including the RabbitMQ Java client, can provide a custom identifier.
 If set, the identifier will be mentioned in log entries and management UI. The identifier is known as
 the **client-provided connection name**. The name can be used to identify an application or a specific component
@@ -407,7 +407,7 @@ provide more convenient ways of setting a custom name on a connection.
 Some protocols, namely AMQP 0-9-1, provide for clients and servers to express
 their capabilities when opening a connection. This can be thought of as a
 table of optional features that specific versions of RabbitMQ and client libraries
-may or may not support. This mechanism is similar to [feature flags](./feature-flags)
+may or may not support. This mechanism is similar to [feature flags](/docs/feature-flags)
 used by RabbitMQ nodes to determine what set of features is supported by all cluster
 members, and if a new member would be able to join the cluster.
 
@@ -432,15 +432,15 @@ actual table encoding is in a binary format and would not be human-friendly):
 
 The capabilities table for clients is optional: failure to present
 such a table does not preclude the client from being able to
-use extensions such as [exchange to exchange bindings](./e2e).
-However, in some cases such as [consumer cancellation notification](./consumer-cancel),
+use extensions such as [exchange to exchange bindings](/docs/e2e).
+However, in some cases such as [consumer cancellation notification](/docs/consumer-cancel),
 the client must present the associated capability, otherwise RabbitMQ nodes will have no
 way of knowing that the client is capable of receiving the additional notifications.
 
 ## Recovery from Network Connection Failures {#automatic-recovery}
 
 Client's TCP connection can fail or experience serious packet loss that would make RabbitMQ nodes
-consider them [unavailable](./heartbeats).
+consider them [unavailable](/docs/heartbeats).
 
 Some client libraries provide a mechanism for automatic recovery from network connection failures.
 [RabbitMQ Java client](/client-libraries/api-guide#recovery) and [RabbitMQ .NET client](/client-libraries/dotnet-api-guide#recovery) support such feature, for example.

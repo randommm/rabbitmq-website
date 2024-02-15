@@ -524,9 +524,9 @@ const sidebars = {
            label: 'Message Tracing',
            },
            {
-           type: 'doc',
-           id: 'amqp-wireshark',
+           type: 'link',
            label: 'Inspecting AMQP Traffic with Wireshark',
+           href: '/other-information/amqp-wireshark',
            },
            {
            type: 'doc',

@@ -23,7 +23,7 @@ limitations under the License.
 
 ## Overview {#overview}
 
-RabbitMQ is [officially supported](./platforms) on a number of
+RabbitMQ is [officially supported](/docs/platforms) on a number of
 operating systems and has several official client libraries. In addition, the RabbitMQ community
 has created numerous clients, adaptors and tools that we list here for
 your convenience.
@@ -35,8 +35,8 @@ would like to see added to this list.
 
 ## Load Testing and Workload Simulation {#workload-simulation}
 
- * &#x2713; [PerfTest](https://perftest.rabbitmq.com/) for [quorum](./quorum-queues) and classic queues
- * &#x2713; [Stream PerfTest](https://rabbitmq.github.io/rabbitmq-stream-java-client/stable/htmlsingle/#the-performance-tool) for [streams](./streams)
+ * &#x2713; [PerfTest](https://perftest.rabbitmq.com/) for [quorum](/docs/quorum-queues) and classic queues
+ * &#x2713; [Stream PerfTest](https://rabbitmq.github.io/rabbitmq-stream-java-client/stable/htmlsingle/#the-performance-tool) for [streams](/docs/streams)
 
 ## Java and Spring {#java-dev}
 
@@ -201,12 +201,12 @@ Miscellaneous projects:
 
 ## Monitoring {#monitoring-tools}
 
- * See [Monitoring](./monitoring) and [Prometheus](./prometheus) guides.
+ * See [Monitoring](/docs/monitoring) and [Prometheus](/docs/prometheus) guides.
 
 
 ## Visualisation {#viz}
 
- * [Rabbit Viz](https://plexsystems.github.io/rabbit-viz/), a tool for visualizing [exported definition files](./backup#rabbitmq-definitions).
+ * [Rabbit Viz](https://plexsystems.github.io/rabbit-viz/), a tool for visualizing [exported definition files](/docs/backup#rabbitmq-definitions).
 
 
 ## Unity 3D {#unity-dev}
@@ -249,8 +249,8 @@ Miscellaneous projects:
 
 ## CLI Tools {#rabbitmq-cli}
 
- * &#x2713; [RabbitMQ CLI tools](./cli)
- * &#x2713; [rabbitmqadmin](./management-cli), a command line tool that targets RabbitMQ HTTP API
+ * &#x2713; [RabbitMQ CLI tools](/docs/cli)
+ * &#x2713; [rabbitmqadmin](/docs/management-cli), a command line tool that targets RabbitMQ HTTP API
  * [amqp-utils](https://github.com/dougbarth/amqp-utils), command line utils for interacting with an AMQP based queue (in Ruby)
  * [amqptools](https://github.com/rmt/amqptools), command line AMQP clients (in C)
  * [rabtap](https://github.com/jandelgado/rabtap), RabbitMQ wire tap and swiss army knife command line tool (in go)
@@ -288,7 +288,7 @@ Miscellaneous projects:
 
 ## Traffic Capture and Protocol Analysis {#protocol-analysis}
 
- * [Wireshark](./amqp-wireshark) is the world's foremost
+ * [Wireshark](/other-information/amqp-wireshark) is the world's foremost
    network protocol analyzer
 
 

@@ -199,7 +199,7 @@ title: AMQP 0-9-1 Quick Reference
                 server to inform publishers on channels in confirm mode of unhandled messages. If a publisher receives this method, it probably needs to republish the offending messages.
             </p>
 
-            [RabbitMQ Documentation](./nack)
+            [RabbitMQ Documentation](/docs/nack)
             <a href="https://rabbitmq.github.io/rabbitmq-java-client/api/current/com/rabbitmq/client/Channel.html#basicNack(long, boolean, boolean)" class="javadoc">[javadoc]</a>
             <a href="https://rabbitmq.github.io/rabbitmq-dotnet-client/api/RabbitMQ.Client.IModel.html#RabbitMQ_Client_IModel_BasicNack_System_UInt64_System_Boolean_System_Boolean_" class="dotnetdoc">[dotnetdoc]</a>
             <a href="/other-information/amqp-0-9-1-reference#basic.nack" class="amqp-doc">[amqpdoc]</a><a href="#top" class="back">(back to top)</a>
@@ -438,7 +438,7 @@ title: AMQP 0-9-1 Quick Reference
             <p>
                 This method sets the channel to use publisher acknowledgements. The client can only use this method on a non-transactional channel.
             </p>
-            [RabbitMQ Documentation](./confirms)
+            [RabbitMQ Documentation](/docs/confirms)
             <a href="https://rabbitmq.github.io/rabbitmq-java-client/api/current/com/rabbitmq/client/Channel.html#confirmSelect()" class="javadoc">[javadoc]</a>
             <a href="https://rabbitmq.github.io/rabbitmq-dotnet-client/api/RabbitMQ.Client.IModel.html#RabbitMQ_Client_IModel_ConfirmSelect" class="dotnetdoc">[dotnetdoc]</a>
             <a href="/other-information/amqp-0-9-1-reference#confirm.select" class="amqp-doc">[amqpdoc]</a><a href="#top" class="back">(back to top)</a>
@@ -478,7 +478,7 @@ title: AMQP 0-9-1 Quick Reference
             <p>Bind exchange to an exchange.</p>
             <p>This method binds an exchange to an exchange.</p>
 
-            [RabbitMQ Documentation](./e2e)
+            [RabbitMQ Documentation](/docs/e2e)
             <a href="https://blog.rabbitmq.com/posts/2010/10/exchange-to-exchange-bindings/" class="doc">RabbitMQ blog post</a>
             <a href="https://rabbitmq.github.io/rabbitmq-java-client/api/current/com/rabbitmq/client/Channel.html#exchangeBind(java.lang.String, java.lang.String, java.lang.String, java.util.Map)" class="javadoc">[javadoc]</a>
             <a
@@ -542,7 +542,7 @@ title: AMQP 0-9-1 Quick Reference
                     messages that cannot be routed and can provide "or else" routing semantics where some messages are handled specifically and the remainder are processed by a generic handler.
                 </p>
             </div>
-            [AE documentation](./ae)
+            [AE documentation](/docs/ae)
             <a href="https://rabbitmq.github.io/rabbitmq-java-client/api/current/com/rabbitmq/client/Channel.html#exchangeDeclare(java.lang.String, java.lang.String, boolean, boolean, java.util.Map)" class="javadoc">[javadoc]</a>
             <a
                 href="https://rabbitmq.github.io/rabbitmq-dotnet-client/api/RabbitMQ.Client.IModel.html#RabbitMQ_Client_IModel_ExchangeDeclare_System_String_System_String_System_Boolean_System_Boolean_System_Collections_Generic_IDictionary_System_String_System_Object__"
@@ -724,8 +724,8 @@ title: AMQP 0-9-1 Quick Reference
                     <em>x-expires</em> argument in the arguments parameter to this method.
                 </p>
             </div>
-            [x-message-ttl documentation](./ttl#per-queue-message-ttl)
-            [x-expires documentation](./ttl#queue-ttl)
+            [x-message-ttl documentation](/docs/ttl#per-queue-message-ttl)
+            [x-expires documentation](/docs/ttl#queue-ttl)
             <a href="https://rabbitmq.github.io/rabbitmq-java-client/api/current/com/rabbitmq/client/Channel.html#queueDeclare(java.lang.String, boolean, boolean, boolean, java.util.Map)" class="javadoc">[javadoc]</a>
             <a
                 href="https://rabbitmq.github.io/rabbitmq-dotnet-client/api/RabbitMQ.Client.IModel.html#RabbitMQ_Client_IModel_QueueDeclare_System_String_System_Boolean_System_Boolean_System_Boolean_System_Collections_Generic_IDictionary_System_String_System_Object__"
