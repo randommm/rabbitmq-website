@@ -54,7 +54,7 @@ they consider to be idle, and network failures [take time to detect](./heartbeat
 In addition to connectivity failures, the server and client
 applications can experience hardware failure (or software can crash)
 at any time. Additionally, even if client applications keep running,
-logic errors can cause [channel](./channels#error-handling) or [connection errors](./connections#error-handling) which force the
+logic errors can cause [channel](./channels#error-handling) or [connection errors](/client-libraries/connections#error-handling) which force the
 client to establish a new channel or connection and recover from the
 problem.
 
@@ -253,7 +253,7 @@ A failed Shovel will be restarted after a configurable delay and retry.
 
 ## Monitoring and Health Checks {#monitoring}
 
-Some failure scenarios are subtle and hard to observe or detect. For example, a slow [connection leak](./connections)
+Some failure scenarios are subtle and hard to observe or detect. For example, a slow [connection leak](/client-libraries/connections)
 can build up over time and like a chronic disease, go unnoticed for a period of time. [Monitoring and metrics](./monitoring)
 is the way to detect many types of failures. Longer-term metric data collected using tools such as [Prometheus](./prometheus)
 can help spot irregularities and problematic patterns in system behaviour.

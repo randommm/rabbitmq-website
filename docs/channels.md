@@ -24,7 +24,7 @@ limitations under the License.
 ## Overview {#overview}
 
 This guide covers various topics related to channels, an [AMQP 0-9-1](/tutorials/amqp-concepts)-specific abstraction.
-Channels cannot exist without a connection, so getting familiar with the [Connections guide](./connections) first
+Channels cannot exist without a connection, so getting familiar with the [Connections guide](/client-libraries/connections) first
 is highly recommended.
 
 This guide covers:
@@ -66,7 +66,7 @@ and not share channels between them.
 
 ### Opening Channels
 
-Applications open a channel right after successfully opening a [connection](./connections).
+Applications open a channel right after successfully opening a [connection](/client-libraries/connections).
 
 Here's a Java client example that opens a new channel with an automatically allocated channel ID
 after opening a new connection:
@@ -272,7 +272,7 @@ channels consume on a node, the total
 number of channels on a node and then identify how many there are on each connection.
 
 The number of channels is displayed in the [management UI](./management) on the Overview tab,
-as is the [number of connections](./connections#monitoring).
+as is the [number of connections](/client-libraries/connections#monitoring).
 By dividing the number of channels by the number of connections
 the operator can determine an average number of channels per connection.
 
@@ -309,7 +309,7 @@ to the Connections tab and enable the relevant columns if they are not displayed
 
 <img class="screenshot" src="img/monitoring/channels/mgmt-ui-per-connection-channel-max-and-count.png" alt="Per connection channel count in management UI" title="Per connection channel count in management UI" />
 
-Overview and individual node pages provide a chart of channel churn rate as of [RabbitMQ 3.7.9](./changelog).
+Overview and individual node pages provide a chart of channel churn rate as of [RabbitMQ 3.7.9](/release-information/changelog).
 If the rate of channel open operations is consistently higher than that of channel close operations,
 this is evidence of a channel leak in one of the applications:
 

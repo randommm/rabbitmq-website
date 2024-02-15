@@ -20,7 +20,7 @@ limitations under the License.
 
 # Manual Pages
 
-This page lists the available manual pages taken from the [latest stable release](./changelog).
+This page lists the available manual pages taken from the [latest stable release](/release-information/changelog).
 
 ## Section 5: File formats {#section5}
 

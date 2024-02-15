@@ -27,7 +27,7 @@ This guide covers a [**deprecated and scheduled for removal feature**](https://b
 
 Quorum queues are a more advanced queue type, which offers high availability using  replication and focuses on data safety. From RabbitMQ 3.10, quorum queues [support message TTL](https://blog.rabbitmq.com/posts/2022/05/rabbitmq-3.10-release-overview/) and provide [higher throughput and more stable latency](https://blog.rabbitmq.com/posts/2022/05/rabbitmq-3.10-performance-improvements/) compared to mirrored classic queues. You can [Migrate your RabbitMQ Mirrored Classic Queues to Quorum Queues](./migrate-mcq-to-qq) now.
 
-[Streams](./streams) is a messaging data structure available as of [RabbitMQ 3.9](./changelog),
+[Streams](./streams) is a messaging data structure available as of [RabbitMQ 3.9](/release-information/changelog),
 and is also replicated.
 
 Quorum queues should be the **default choice** for a replicated queue type.

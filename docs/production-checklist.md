@@ -33,7 +33,7 @@ activities such as [upgrades](./upgrade) before going into production.
 ## Overview {#toc}
 
 Production systems have concerns that go beyond configuration: system observability,
-security, application development practices, resource usage, [release support timeline](./versions), and more.
+security, application development practices, resource usage, [release support timeline](/release-information/versions), and more.
 
 [Monitoring](./monitoring) and metrics are the foundation of a production-grade system.
 Besides helping detect issues, it provides the operator data that can be used
@@ -481,7 +481,7 @@ Very short lived connections should be avoided when possible. The following sect
 will cover this in more detail.
 
 It is recommended that, when possible, publishers and consumers use separate connections
-so that consumers are isolated from potential [flow control](./connections#flow-control)
+so that consumers are isolated from potential [flow control](/client-libraries/connections#flow-control)
 that may be applied to publishing connections, affecting [manual consumer acknowledgements](./confirms).
 
 ### Connection Churn {#apps-connection-churn}

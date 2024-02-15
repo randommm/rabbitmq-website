@@ -130,7 +130,7 @@ Erlang must have been complied with both observer & Wx support.
 
 ## Connections {#connections}
 
-[Connections guide](./connections) explains how to identify application connection leaks and other
+[Connections guide](/client-libraries/connections) explains how to identify application connection leaks and other
 relevant topics.
 
 

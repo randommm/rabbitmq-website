@@ -613,7 +613,7 @@ The examples above include two values that can be used as connection identifiers
 in various scenarios: connection name (`127.0.0.1:57919 -> 127.0.0.1:5672`) and an Erlang process ID of the connection (`&lt;0.620.0&gt;`).
 The latter is used by [rabbitmqctl](./cli) and the former is used by the [HTTP API](./management).
 
-A [client connection](./connections) can be closed cleanly or abnormally. In the
+A [client connection](/client-libraries/connections) can be closed cleanly or abnormally. In the
 former case the client closes AMQP 0-9-1 (or 1.0, or STOMP, or
 MQTT) connection gracefully using a dedicated library function
 (method). In the latter case the client closes TCP connection
@@ -696,7 +696,7 @@ Below is a list of published events.
  * `binding.created`
  * `binding.deleted`
 
-[Connection](./connections) and [Channel](./channels) events:
+[Connection](/client-libraries/connections) and [Channel](./channels) events:
 
  * `connection.created`
  * `connection.closed`

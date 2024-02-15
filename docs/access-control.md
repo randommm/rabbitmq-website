@@ -62,7 +62,7 @@ authorisation as "determining what the user is and isn't allowed to do."
 
 ## The Basics {#basics}
 
-Clients use RabbitMQ features to [connect](./connections) to it. Every connection has
+Clients use RabbitMQ features to [connect](/client-libraries/connections) to it. Every connection has
 an associated user which is authenticated. It also targets a [virtual host](./vhosts) for which
 the user must have a certain set of permissions.
 
@@ -120,7 +120,7 @@ With this mechanism, any client-provided password will be ignored.
 By default, the <code>guest</code> user is prohibited from
 connecting from remote hosts; it can only connect over
 a loopback interface (i.e. <code>localhost</code>). This
-applies to [connections regardless of the protocol](./connections).
+applies to [connections regardless of the protocol](/client-libraries/connections).
 Any other users will not (by default) be restricted in this way.
 
 The recommended way to address this in production systems

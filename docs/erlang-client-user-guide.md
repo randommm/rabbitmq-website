@@ -26,7 +26,7 @@ This guide covers an Erlang client for RabbitMQ (<a href="/tutorials/amqp-concep
 
 This user guide assumes that the reader is familiar with <a href="/tutorials/amqp-concepts">basic concepts of AMQP 0-9-1</a>.
 
-Refer to guides on [connections](./connections), [channels](./channels), [queues](./queues),
+Refer to guides on [connections](/client-libraries/connections), [channels](./channels), [queues](./queues),
 [publishers](./publishers), and [consumers](./consumers) to learn about those
 key RabbitMQ concepts in more details.
 
@@ -74,7 +74,7 @@ dep_rabbit_common = hex &version-erlang-client;
 The basic usage of the client follows these broad steps:
 
 1. Make sure the `amqp_client` Erlang application is started
-2. Establish a [connection](./connections) to a RabbitMQ node
+2. Establish a [connection](/client-libraries/connections) to a RabbitMQ node
 3. Open a new channel on the connection
 4. Execute [AMQP 0-9-1 commands](./amqp-0-9-1-quickref) with a channel such as
    declaring exchanges and queues, defining bindings between them, publishing messages,
@@ -168,7 +168,7 @@ amqp_client.hrl in every module that uses the Erlang client:
 
 ## Connecting to RabbitMQ {#connecting}
 
-The `amqp_connection` module is used to start a [connection](./connections) to a RabbitMQ node.
+The `amqp_connection` module is used to start a [connection](/client-libraries/connections) to a RabbitMQ node.
 In this example we will use a network connection, which is the recommended
 option for most use cases:
 

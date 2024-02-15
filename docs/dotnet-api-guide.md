@@ -130,7 +130,7 @@ and in part due to [the list of types supported by other popular clients](https:
 
 ## Connecting to RabbitMQ {#connecting}
 
-Before an application can use RabbitMQ, it has to open a [connection](./connections)
+Before an application can use RabbitMQ, it has to open a [connection](/client-libraries/connections)
 to a RabbitMQ node. The connection then will be used to perform all subsequent
 operations. Connections are **meant to be long-lived**. Opening a connection
 for every operation (e.g. publishing a message) would be very inefficient and is
@@ -659,7 +659,7 @@ lock (ch) {
 Symptoms of incorrect serialisation of `IModel` operations
 include, but are not limited to,
 
- * [connection-level exceptions](./connections#error-handling) due to invalid frame
+ * [connection-level exceptions](/client-libraries/connections#error-handling) due to invalid frame
    interleaving on the wire. RabbitMQ [server logs](./logging) will
    contain unexpected frame errors in such scenario.
  * Pipelining and continuation exceptions thrown by the client

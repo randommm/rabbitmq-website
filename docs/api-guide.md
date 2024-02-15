@@ -244,7 +244,7 @@ Client disconnection events can be [observed in server node logs](./networking#l
 
 ## Connection and Channel Lifespan {#connection-and-channel-lifespan}
 
-Client [connections](./connections) are meant to be long-lived. The underlying protocol is designed and optimized for
+Client [connections](/client-libraries/connections) are meant to be long-lived. The underlying protocol is designed and optimized for
 long running connections. That means that opening a new connection per operation,
 e.g. a message published, is unnecessary and strongly discouraged as it will introduce a lot of
 network roundtrips and overhead.

@@ -67,7 +67,7 @@ different geographic or administrative domains that
 
 ### WAN-friendly
 
-The Shovel plugin uses [client connections](./connections) under the hood.
+The Shovel plugin uses [client connections](/client-libraries/connections) under the hood.
 [Acknowledgements and publisher confirms](./confirms) are used to ensure data safety in case of connection
 and node failures.
 
@@ -97,7 +97,7 @@ is provided in the [Distributed Messaging](./distributed) guide.
 
 In essence, a shovel is a minimalistic message pump. Each shovel:
 
- * [Connects](./connections) to the source and destination clusters
+ * [Connects](/client-libraries/connections) to the source and destination clusters
  * [Consumes](./consumers) messages from a queue
  * [Re-publishes](./publishers) to a destination
  * Uses [data safety features](./confirms) on both ends and handles failures
@@ -193,7 +193,7 @@ creation.
 
 The plugin uses [Erlang AMQP 0-9-1](./erlang-client-user-guide) and [Erlang AMQP 1.0](https://github.com/rabbitmq/rabbitmq-amqp1.0-client)
 clients under the hood to open connections to its source and/or destination. Just like any other
-[client library connection](./connections), a Shovel connection must [successfully authenticate](./access-control)
+[client library connection](/client-libraries/connections), a Shovel connection must [successfully authenticate](./access-control)
 and be [authorized to access](./access-control) the virtual host and resources it is trying to use.
 This is true for both sources and destinations.
 
