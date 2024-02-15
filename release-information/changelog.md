@@ -2442,7 +2442,7 @@ released separately.
         <li><a href="./passwords">Password hashing</a> now uses SHA-256 by default:
         please <a href="./passwords">read the docs</a> before importing definitions from 3.5.x!</li>
         <li><a href="./web-stomp">Web STOMP</a> revamp, with new "pure WebSocket" endpoint</li>
-        <li><a href="./plugin-development">New build system</a> based on <a href="https://github.com/ninenines/erlang.mk">erlang.mk</a></li>
+        <li><a href="/other-information/plugin-development">New build system</a> based on <a href="https://github.com/ninenines/erlang.mk">erlang.mk</a></li>
         <li>Development <a href="https://github.com/rabbitmq/">moved entirely to GitHub</a></li>
       </ul>
     </td>
@@ -2538,7 +2538,7 @@ released separately.
         <li><a href="./priority">Priority queues</a></li>
         <li><a href="./persistence-conf">Faster persistence</a></li>
         <li>I/O statistics</li>
-        <li><a href="./dotnet-api-guide">.NET client API</a> changes</li>
+        <li><a href="/client-libraries/dotnet-api-guide">.NET client API</a> changes</li>
       </ul>
     </td>
     <td class="centre"><a href="https://github.com/rabbitmq/rabbitmq-server/blob/main/release-notes/README-3.5.0.txt">Release notes</a></td>
@@ -2665,7 +2665,7 @@ released separately.
     <td>
       <ul>
         <li><a href="./shovel-dynamic">Dynamic shovels</a></li>
-        <li><a href="./api-guide#recovery">Reconnecting Java client</a></li>
+        <li><a href="/client-libraries/api-guide#recovery">Reconnecting Java client</a></li>
         <li><a href="./consumer-prefetch">Consumer Prefetch</a></li>
       </ul>
     </td>

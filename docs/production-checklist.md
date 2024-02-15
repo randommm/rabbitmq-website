@@ -499,8 +499,8 @@ reduce peak resource usage.
 
 ### Recovery from Connection Failures {#apps-automatic-recovery}
 
-Some client libraries, for example, [Java](./api-guide),
-[.NET](./dotnet-api-guide) and
+Some client libraries, for example, [Java](/client-libraries/api-guide),
+[.NET](/client-libraries/dotnet-api-guide) and
 [Ruby](http://rubybunny.info), support
 automatic connection recovery after network failures. If the
 client used provides this feature, it is recommended to use

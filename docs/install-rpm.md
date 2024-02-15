@@ -757,7 +757,7 @@ is the OS PID of the Erlang VM running RabbitMQ, as returned by `rabbitmq-diagno
 ### Configuration Management Tools {#chef-puppet-bosh}
 
 Configuration management tools (e.g. Chef, Puppet, BOSH) provide assistance
-with system limit tuning. Our [developer tools](./devtools) guide
+with system limit tuning. Our [developer tools](/client-libraries/devtools) guide
 lists relevant modules and projects.
 
 

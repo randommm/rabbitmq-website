@@ -28,7 +28,7 @@ are covered by the [Networking](./networking) and [Troubleshooting Networking](.
 
 RabbitMQ supports several protocols:
 
- * [AMQP 0-9-1](./specification) with [extensions](./extensions)
+ * [AMQP 0-9-1](/other-information/specification) with [extensions](./extensions)
  * [AMQP 1.0](https://www.amqp.org/resources/download)
  * [RabbitMQ Stream Protocol](./stream)
  * [MQTT](./mqtt) 3.1 through 5.0
@@ -61,7 +61,7 @@ and other topics related to connections.
 
 ## The Basics {#basics}
 
-Applications interact with RabbitMQ using client libraries. There are [client libraries](./devtools)
+Applications interact with RabbitMQ using client libraries. There are [client libraries](/client-libraries/devtools)
 available for many programming languages and platforms.
 Each protocol has its own set of client libraries. Most client libraries are open source.
 
@@ -225,7 +225,7 @@ This chart demonstrates a monotonically growing number of connections after a dr
 If the number of sockets used by a node keeps growing and growing, it is likely an indication
 of a connection leak in one of the applications.
 
-Some client libraries, [such as the Java client](./api-guide#metrics), expose metrics including the number of currently
+Some client libraries, [such as the Java client](/client-libraries/api-guide#metrics), expose metrics including the number of currently
 opened connections. Charting and monitoring application metrics around connections is the best way
 to identify what app leaks connections or uses them in a suboptimal way.
 
@@ -399,7 +399,7 @@ within an application. The name is optional; however, developers are strongly en
 as it would significantly simplify certain operational tasks.
 
 Connection name must be specified using the `"connection_name"` field in the [client capabilities table](#capabilities).
-Some client libraries, e.g. [Java](./api-guide#client-provided-names) and [.NET](./dotnet-api-guide#client-provided-names),
+Some client libraries, e.g. [Java](/client-libraries/api-guide#client-provided-names) and [.NET](/client-libraries/dotnet-api-guide#client-provided-names),
 provide more convenient ways of setting a custom name on a connection.
 
 ## Client and Server Capabilities {#capabilities}
@@ -443,7 +443,7 @@ Client's TCP connection can fail or experience serious packet loss that would ma
 consider them [unavailable](./heartbeats).
 
 Some client libraries provide a mechanism for automatic recovery from network connection failures.
-[RabbitMQ Java client](./api-guide#recovery) and [RabbitMQ .NET client](./dotnet-api-guide#recovery) support such feature, for example.
+[RabbitMQ Java client](/client-libraries/api-guide#recovery) and [RabbitMQ .NET client](/client-libraries/dotnet-api-guide#recovery) support such feature, for example.
 This feature is largely protocol- and client library-specific.
 
 Other clients may consider network failure recovery to be a responsibility of the application. In this

@@ -62,7 +62,7 @@ To get a feel for what you can do, I recommend taking a look at Tony Garnock-Jon
 
 We think that messaging should be intuitive regardless of the application platform you develop for. In Java, the clear leader is Spring and we are part of the SpringSource division of Vmware, thus adding fully fledged Spring support was a must. We are extremely grateful to Mark Fisher and Mark Pollack from the SpringSource team for bringing this to fruition. With the release of RabbitMQ 2.0 we are highlighting to the whole community that [Spring support is officially available](http://www.springsource.org/spring-amqp).
 
-If you are a .NET user, you have been able to run RabbitMQ as a Windows service, and use it from [.NET languages and WCF](/docs/dotnet) for some years now. This is great if you want to do messaging from Windows based applications, such as Excel, to back end services written in Java or any other of the hundreds of AMQP integration points. Now, with Spring.NET support we offer you a common application development model as well, that works equally well in both Java and .NET.
+If you are a .NET user, you have been able to run RabbitMQ as a Windows service, and use it from [.NET languages and WCF](/client-libraries/dotnet) for some years now. This is great if you want to do messaging from Windows based applications, such as Excel, to back end services written in Java or any other of the hundreds of AMQP integration points. Now, with Spring.NET support we offer you a common application development model as well, that works equally well in both Java and .NET.
 
 **Putting it all together: more freedom to choose**
 

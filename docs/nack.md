@@ -25,7 +25,7 @@ limitations under the License.
 Consumers in AMQP 0-9-1 can choose to use [manual acknowledgements](./confirms)
 of deliveries.
 
-The [AMQP 0-9-1 specification](./specification) defines the `basic.reject`
+The [AMQP 0-9-1 specification](/other-information/specification) defines the `basic.reject`
 method that allows clients to reject individual, delivered
 messages, instructing the broker to either discard them or
 requeue them. Unfortunately, `basic.reject`

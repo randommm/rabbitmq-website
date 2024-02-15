@@ -127,7 +127,7 @@ See the [Signatures guide](./signatures) for details on how to verify package si
 
 ### The Documentation
 
-Please refer to the [API guide](./api-guide).
+Please refer to the [API guide](/client-libraries/api-guide).
 
 The Javadoc documentation is <a href="https://rabbitmq.github.io/rabbitmq-java-client/api/current/">browsable on-line</a>, or you can
 download it for off-line use:

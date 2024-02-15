@@ -1,6 +1,6 @@
 ---
 title: Clients Libraries and Developer Tools
-displayed_sidebar: docsSidebar
+displayed_sidebar: integClientLibSidebar
 ---
 <!--
 Copyright (c) 2005-2024 Broadcom. All Rights Reserved. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
@@ -41,7 +41,7 @@ would like to see added to this list.
 ## Java and Spring {#java-dev}
 
 ### Java
- * &#x2713; [RabbitMQ Java client](./java-client) and its [developer guide](./api-guide)
+ * &#x2713; [RabbitMQ Java client](./java-client) and its [developer guide](/client-libraries/api-guide)
  * &#x2713; [RabbitMQ Stream Java client](https://github.com/rabbitmq/rabbitmq-stream-java-client)
  * &#x2713; [RabbitMQ JMS client](./jms-client)
  * [Reactor RabbitMQ](https://github.com/reactor/reactor-rabbitmq), a reactive API for RabbitMQ based on

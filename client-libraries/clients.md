@@ -31,17 +31,17 @@ import {
 ## Java
 
  * [Downloads and Installation](./java-client)
- * [API Guide](./api-guide)
+ * [API Guide](/client-libraries/api-guide)
  * <a href={JavaClientDocURL()}>API Reference</a>
  * [JMS Guide](./jms-client)
  * [JMS Reference](https://github.com/rabbitmq/rabbitmq-jms-client/blob/main/jms-client-compliance.md)
- * [Command line tools](./java-tools)
+ * [Command line tools](/client-libraries/java-tools)
 
 
 ## .NET/C# #
 
  * [Downloads and Installation](./dotnet)
- * [API Guide](./dotnet-api-guide)
+ * [API Guide](/client-libraries/dotnet-api-guide)
  * <a href={DotNetClientDocURL() + '/RabbitMQ.Client.html'}>API Reference</a>
 
 ## Erlang
@@ -52,6 +52,6 @@ import {
 
 ## Other Resources
 
-* [AMQP URI Parsing Spec](./uri-spec)
+* [AMQP URI Parsing Spec](/other-information/uri-spec)
 
-See the [developer tools](./devtools) for community-contributed code.
+See the [developer tools](/client-libraries/devtools) for community-contributed code.

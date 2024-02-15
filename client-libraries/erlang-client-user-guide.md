@@ -341,7 +341,7 @@ a channel and will be used to execute protocol commands.
 ## Using AMQP 0-9-1 Methods (Protocol Operations) {#methods}
 
 The client library's primary way of interacting with RabbitMQ nodes is by
-sending and handling [AMQP 0-9-1 methods](./specification)
+sending and handling [AMQP 0-9-1 methods](/other-information/specification)
 (also referred to as "commands" in this guide) that are represented by records.
 
 The client tries to use sensible default values for each record.

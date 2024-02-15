@@ -539,7 +539,7 @@ channel.BasicCancel(consumerTag);
 
 When calling the API methods, you always refer to consumers by their
 consumer tags, which can be either client- or server-generated as
-explained in the [AMQP 0-9-1 specification](./specification) document.
+explained in the [AMQP 0-9-1 specification](/other-information/specification) document.
 
 
 ## Consumer Memory Safety Requirements {#consuming-memory-safety}

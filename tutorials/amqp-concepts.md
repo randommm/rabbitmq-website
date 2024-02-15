@@ -489,7 +489,7 @@ _methods_. Methods are operations (like HTTP methods)
 and have nothing in common with methods in object-oriented
 programming languages. Protocol methods in AMQP 0-9-1 are grouped into
 _classes_. Classes are just logical groupings of AMQP
-methods. The [AMQP 0-9-1 reference](/docs/amqp-0-9-1-reference) has full details of all the AMQP methods.
+methods. The [AMQP 0-9-1 reference](/other-information/amqp-0-9-1-reference) has full details of all the AMQP methods.
 
 Let us take a look at the _exchange_ class, a group
 of methods related to operations on exchanges. It includes
@@ -593,7 +593,7 @@ specify what vhosts they want to use during connection negotiation.
 
 AMQP 0-9-1 has several extension points:
 
- * [Custom exchange types](/docs/devtools#miscellaneous) let developers
+ * [Custom exchange types](/client-libraries/devtools#miscellaneous) let developers
    implement routing schemes that exchange types provided out-of-the-box do
    not cover well, for example, geodata-based routing.
  * Declaration of exchanges and queues can include additional attributes that the broker
@@ -611,7 +611,7 @@ and applicable to a very broad range of problems.
 
 ## AMQP 0-9-1 Clients Ecosystem {#amqp-clients}
 
-There are [many AMQP 0-9-1 clients](/docs/devtools) for many
+There are [many AMQP 0-9-1 clients](/client-libraries/devtools) for many
 popular programming languages and platforms. Some of them follow AMQP terminology
 closely and only provide implementation of AMQP methods. Some
 others have additional features, convenience methods

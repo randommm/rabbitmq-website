@@ -131,7 +131,7 @@ Other guides related to Kubernetes:
 
  * On Maven Central: [RabbitMQ Java client](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.rabbitmq%22%20AND%20a%3A%22amqp-client%22)
  * Quick download: <a href={`https://repo1.maven.org/maven2/com/rabbitmq/amqp-client/${JavaClientVersion()}/amqp-client-${JavaClientVersion()}.jar`}>Maven.org</a>
- * [API guide](./api-guide)
+ * [API guide](/client-libraries/api-guide)
  * [API reference](https://rabbitmq.github.io/rabbitmq-java-client/api/current/) (JavaDoc)
  * [License and other information](./java-client)
  * [Older versions](https://repo1.maven.org/maven2/com/rabbitmq/amqp-client/)
@@ -147,7 +147,7 @@ Other guides related to Kubernetes:
 ### .NET/C# Client
 
  * On NuGet: [RabbitMQ .NET Client](https://www.nuget.org/packages/RabbitMQ.Client)
- * [API guide](./dotnet-api-guide)
+ * [API guide](/client-libraries/dotnet-api-guide)
  * [API reference](https://rabbitmq.github.io/rabbitmq-dotnet-client/)
  * [License and other information](./dotnet)
  * [Older versions](https://github.com/rabbitmq/rabbitmq-dotnet-client/releases)
@@ -162,7 +162,7 @@ Other guides related to Kubernetes:
 
 ### Clients for Other Languages
 
-The RabbitMQ community has created a large number of [clients and developer tools](./devtools)
+The RabbitMQ community has created a large number of [clients and developer tools](/client-libraries/devtools)
 covering a variety of platforms and languages.
 
 

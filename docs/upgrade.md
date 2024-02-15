@@ -565,8 +565,8 @@ and consumers) should be able to cope with a server-initiated connection
 close. Some client libraries offer automatic connection recovery
 to help with this:
 
-* [Java client](./api-guide#recovery)
-* [.NET client](./dotnet-api-guide#connection-recovery)
+* [Java client](/client-libraries/api-guide#recovery)
+* [.NET client](/client-libraries/dotnet-api-guide#connection-recovery)
 * [Bunny](http://rubybunny.info/articles/error_handling.html#network_connection_failures) (Ruby)
 
 In most client libraries there is a way to react to a connection closure, for example:

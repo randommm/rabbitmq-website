@@ -9,7 +9,7 @@ title: AMQP 0-9-1 Complete Reference Guide
             <a href="http://www.amqp.org/legal/amqp-license">AMQP license</a>.
         </p>
         <p>
-            Elsewhere on this site you can read details of <a href="./specification">RabbitMQ's conformance to the specification</a>. RabbitMQ implements <a href="../docs/extensions">several extensions</a> to the core specification that are
+            Elsewhere on this site you can read details of <a href="/other-information/specification">RabbitMQ's conformance to the specification</a>. RabbitMQ implements <a href="../docs/extensions">several extensions</a> to the core specification that are
             documented in this guide. The original and extended specification downloads can be found on the <a href="./protocol">protocol page</a>.
         </p>
         <p>You may also be interested in our <a href="./amqp-0-9-1-quickref">Protocol &amp; API Quick Reference</a>.</p>
