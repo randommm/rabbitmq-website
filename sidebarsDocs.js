@@ -110,23 +110,6 @@ const sidebars = {
          },
          {
           type: 'category',
-          label: 'Install Instructions',
-          link: {type: 'doc', id: 'build'},
-          items: [
-            {
-              type: 'doc',
-              id: 'github',
-              label: 'Using Git and Github',
-            },
-            {
-              type: 'doc',
-              id: 'build',
-              label: 'Building the Server',
-            },
-          ],
-        },
-         {
-          type: 'category',
           label: 'Upgrade',
           link: {type: 'doc', id: 'upgrade'},
           items: [
@@ -541,9 +524,9 @@ const sidebars = {
            label: 'Message Tracing',
            },
            {
-           type: 'doc',
-           id: 'amqp-wireshark',
+           type: 'link',
            label: 'Inspecting AMQP Traffic with Wireshark',
+           href: '/other-information/amqp-wireshark',
            },
            {
            type: 'doc',

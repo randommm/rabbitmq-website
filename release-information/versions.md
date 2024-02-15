@@ -32,8 +32,8 @@ This guide explains what release series of RabbitMQ are currently covered by
 community or extended commercial support policies, which release series is coming next, and
 what series are no longer supported.
 
-For guidance on upgrades, see the [Upgrade](./upgrade) and
-[Blue/Green Deployment Upgrade](./blue-green-upgrade) guides.
+For guidance on upgrades, see the [Upgrade](/docs/upgrade) and
+[Blue/Green Deployment Upgrade](/docs/blue-green-upgrade) guides.
 
 ## {`Currently Supported ${RabbitMQServerProductName()} Release Series`} {#currently-supported}
 
@@ -88,7 +88,7 @@ VMware [terminology related to support lifecycle policy](https://tanzu.vmware.co
 <sup>1</sup> **Community Support** means patch releases are [produced regularly](./changelog) based on feedback from all users,
 both community and those with a commercial license.
 
-<sup>2</sup> **Extended Commercial Support** means patches are produced for security and high severity issues reported by users with a [commercial license](./contact#paid-support).
+<sup>2</sup> **Extended Commercial Support** means patches are produced for security and high severity issues reported by users with a [commercial license](/contact#paid-support).
 
 
 ## Next Release Series {#}

@@ -29,8 +29,8 @@ import {
 
 # Downloading and Installing RabbitMQ
 
-The latest [release](https://github.com/rabbitmq/rabbitmq-server/releases) of RabbitMQ is <strong><RabbitMQServerVersion/></strong>. See [change log](./changelog) for release notes.
-See [RabbitMQ support timeline](./versions) to find out what release series are supported.
+The latest [release](https://github.com/rabbitmq/rabbitmq-server/releases) of RabbitMQ is <strong><RabbitMQServerVersion/></strong>. See [change log](/release-information/changelog) for release notes.
+See [RabbitMQ support timeline](/release-information/versions) to find out what release series are supported.
 
 Experimenting with RabbitMQ on your workstation? Try the [community Docker image](https://hub.docker.com/_/rabbitmq/):
 
@@ -131,9 +131,9 @@ Other guides related to Kubernetes:
 
  * On Maven Central: [RabbitMQ Java client](http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.rabbitmq%22%20AND%20a%3A%22amqp-client%22)
  * Quick download: <a href={`https://repo1.maven.org/maven2/com/rabbitmq/amqp-client/${JavaClientVersion()}/amqp-client-${JavaClientVersion()}.jar`}>Maven.org</a>
- * [API guide](./api-guide)
+ * [API guide](/client-libraries/api-guide)
  * [API reference](https://rabbitmq.github.io/rabbitmq-java-client/api/current/) (JavaDoc)
- * [License and other information](./java-client)
+ * [License and other information](/client-libraries/java-client)
  * [Older versions](https://repo1.maven.org/maven2/com/rabbitmq/amqp-client/)
 
 ### Java [Stream Protocol](./streams) Client
@@ -147,9 +147,9 @@ Other guides related to Kubernetes:
 ### .NET/C# Client
 
  * On NuGet: [RabbitMQ .NET Client](https://www.nuget.org/packages/RabbitMQ.Client)
- * [API guide](./dotnet-api-guide)
+ * [API guide](/client-libraries/dotnet-api-guide)
  * [API reference](https://rabbitmq.github.io/rabbitmq-dotnet-client/)
- * [License and other information](./dotnet)
+ * [License and other information](/client-libraries/dotnet)
  * [Older versions](https://github.com/rabbitmq/rabbitmq-dotnet-client/releases)
 
 ### .NET/C# [Stream Protocol](./streams) Client
@@ -162,7 +162,7 @@ Other guides related to Kubernetes:
 
 ### Clients for Other Languages
 
-The RabbitMQ community has created a large number of [clients and developer tools](./devtools)
+The RabbitMQ community has created a large number of [clients and developer tools](/client-libraries/devtools)
 covering a variety of platforms and languages.
 
 
@@ -171,7 +171,7 @@ covering a variety of platforms and languages.
 For your convenience, we offer binary downloads of various
 plugins developed by the community.
 
- * [Description of available plugins](./community-plugins)
+ * [Description of available plugins](/other-information/community-plugins)
 
 ## Snapshot (Alpha) Builds
 

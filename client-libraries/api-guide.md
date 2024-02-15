@@ -171,7 +171,7 @@ remains unassigned prior to creating a connection:
 
 ### Connecting Using a URI {#uri}
 
-Alternatively, [URIs](./uri-spec) may be used:
+Alternatively, [URIs](/other-information/uri-spec) may be used:
 
 ```java
 ConnectionFactory factory = new ConnectionFactory();
@@ -182,13 +182,13 @@ Connection conn = factory.newConnection();
 All of these parameters have sensible defaults for a stock
 RabbitMQ server running locally.
 
-Successful and unsuccessful client connection events can be [observed in server node logs](./logging).
+Successful and unsuccessful client connection events can be [observed in server node logs](/docs/logging).
 
-Note that [user guest can only connect from localhost](./access-control) by default.
+Note that [user guest can only connect from localhost](/docs/access-control) by default.
 This is to limit well-known credential use in production systems.
 
 Application developers can [assign a custom name to a connection](#client-provided-names). If set,
-the name will be mentioned in RabbitMQ node logs as well as [management UI](./management).
+the name will be mentioned in RabbitMQ node logs as well as [management UI](/docs/management).
 
 The `Connection` interface can then be used to open a channel:
 
@@ -240,21 +240,21 @@ conn.close();
 Note that closing the channel may be considered good practice, but is not strictly necessary here - it will be done
 automatically anyway when the underlying connection is closed.
 
-Client disconnection events can be [observed in server node logs](./networking#logging).
+Client disconnection events can be [observed in server node logs](/docs/networking#logging).
 
 ## Connection and Channel Lifespan {#connection-and-channel-lifespan}
 
-Client [connections](./connections) are meant to be long-lived. The underlying protocol is designed and optimized for
+Client [connections](/client-libraries/connections) are meant to be long-lived. The underlying protocol is designed and optimized for
 long running connections. That means that opening a new connection per operation,
 e.g. a message published, is unnecessary and strongly discouraged as it will introduce a lot of
 network roundtrips and overhead.
 
-[Channels](./channels) are also meant to be long-lived but since many recoverable protocol errors will
+[Channels](/docs/channels) are also meant to be long-lived but since many recoverable protocol errors will
 result in channel closure, channel lifespan could be shorter than that of its connection.
 Closing and opening new channels per operation is usually unnecessary but can be
 appropriate. When in doubt, consider reusing channels first.
 
-[Channel-level exceptions](./channels#error-handling) such as attempts to consume from a
+[Channel-level exceptions](/docs/channels#error-handling) such as attempts to consume from a
 queue that does not exist will result in channel closure. A closed channel can no
 longer be used and will not receive any more events from the server (such
 as message deliveries). Channel-level exceptions will be logged by RabbitMQ
@@ -268,9 +268,9 @@ RabbitMQ nodes have a limited amount of information about their clients:
  * the credentials used
 
 This information alone can make identifying applications and instances problematic, in particular when credentials can be
-shared and clients connect over a load balancer but [Proxy protocol](./networking#proxy-protocol) cannot be enabled.
+shared and clients connect over a load balancer but [Proxy protocol](/docs/networking#proxy-protocol) cannot be enabled.
 
-To make it easier to identify clients in [server logs](./logging) and [management UI](./management),
+To make it easier to identify clients in [server logs](/docs/logging) and [management UI](/docs/management),
 AMQP 0-9-1 client connections, including the RabbitMQ Java client, can provide a custom identifier.
 If set, the identifier will be mentioned in log entries and management UI. The identifier is known as
 the **client-provided connection name**. The name can be used to identify an application or a specific component
@@ -291,12 +291,12 @@ Connection conn = factory.newConnection("app:audit component:event-consumer");
 
 ## Using Exchanges and Queues {#exchanges-and-queues}
 
-Client applications work with [exchanges] and [queues](./queues),
+Client applications work with [exchanges] and [queues](/docs/queues),
 the high-level [building blocks of the protocol](/tutorials/amqp-concepts).
 These must be declared before they can be used. Declaring either type of object
 simply ensures that one of that name exists, creating it if necessary.
 
-Continuing the previous example, the following code declares an exchange and a [server-named queue](./queues#server-named-queues),
+Continuing the previous example, the following code declares an exchange and a [server-named queue](/docs/queues#server-named-queues),
 then binds them together.
 
 ```java
@@ -344,7 +344,7 @@ This "short form, long form" pattern is used throughout the client API uses.
 Queues and exchanges can be declared "passively". A passive declare simply checks that the entity
 with the provided name exists. If it does, the operation is a no-op. For queues successful
 passive declares will return the same information as non-passive ones, namely the number of
-consumers and messages in [ready state](./confirms) in the queue.
+consumers and messages in [ready state](/docs/confirms) in the queue.
 
 If the entity does not exist, the operation fails with a channel level exception. The channel
 cannot be used after that. A new channel should be opened. It is common to use one-off (temporary)
@@ -375,7 +375,7 @@ channel.queueDeclareNoWait(queueName, true, false, false, null);
 ```
 
 The "no wait" versions are more efficient but offer lower safety guarantees, e.g. they
-are more dependent on the [heartbeat mechanism](./heartbeats) for detection of failed operations.
+are more dependent on the [heartbeat mechanism](/docs/heartbeats) for detection of failed operations.
 When in doubt, start with the standard version. The "no wait" versions are only needed in scenarios
 with high topology (queue, binding) churn.
 
@@ -416,7 +416,7 @@ channel.basicPublish(exchangeName, routingKey, null, messageBodyBytes);
 ```
 
 For fine control, use overloaded variants to specify the `mandatory` flag,
-or send messages with pre-set message properties (see the [Publishers guide](./publishers) for details):
+or send messages with pre-set message properties (see the [Publishers guide](/docs/publishers) for details):
 
 ```java
 channel.basicPublish(exchangeName, routingKey, mandatory,
@@ -469,7 +469,7 @@ supported property.
 Note that `BasicProperties` is an inner class of an outer class, `AMQP`.
 
 Invocations of `Channel#basicPublish` will eventually block if a
-[resource-driven alarm](./alarms) is in effect.
+[resource-driven alarm](/docs/alarms) is in effect.
 
 
 ## Channels and Concurrency Considerations (Thread Safety) {#concurrency}
@@ -491,7 +491,7 @@ It therefore requires explicit synchronization in application
 code (`Channel#basicPublish` must be invoked in a
 critical section). Sharing channels between threads will also
 interfere with [Publisher
-Confirms](./confirms). Concurrent publishing on a shared channel is best avoided entirely,
+Confirms](/docs/confirms). Concurrent publishing on a shared channel is best avoided entirely,
 e.g. by using a channel per thread.
 
 It is possible to use channel pooling to avoid concurrent
@@ -524,7 +524,7 @@ one per connection.  It is possible to provide a custom
 executor that will be shared by all connections produced by a
 single `ConnectionFactory` using the `ConnectionFactory#setSharedExecutor` setter.
 
-When [manual acknowledgements](./confirms) are used, it is important
+When [manual acknowledgements](/docs/confirms) are used, it is important
 to consider what thread does the acknowledgement. If it's different from the
 thread that received the delivery (e.g. `Consumer#handleDelivery`
 delegated delivery handling to a different thread), acknowledging
@@ -663,7 +663,7 @@ if (response == null) {
     // ...
 ```
 
-and since this example uses [manual acknowledgements](./confirms) (the `autoAck = false` above),
+and since this example uses [manual acknowledgements](/docs/confirms) (the `autoAck = false` above),
 you must also call `Channel.basicAck` to acknowledge that you have successfully received the message:
 
 ```java
@@ -946,7 +946,7 @@ The Java client ships with the following implementations
 
 ### Heartbeat Timeout {#heartbeats-timeout}
 
-See the [Heartbeats guide](./heartbeats) for more information about heartbeats and how to configure them in the Java client.
+See the [Heartbeats guide](/docs/heartbeats) for more information about heartbeats and how to configure them in the Java client.
 
 ### Custom Thread Factories {#thread-factories}
 
@@ -1028,7 +1028,7 @@ by default (and thus topology recovery as well).
 
 Topology recovery relies on a per-connection cache of entities (queues, exchanges,
 bindings, consumers). When, say, a queue is declared on a connection, it will be added to the cache.
-When it is deleted or is scheduled for deletion (e.g. because it is [auto-deleted](./queues))
+When it is deleted or is scheduled for deletion (e.g. because it is [auto-deleted](/docs/queues))
 it will be removed. This model has some limitations covered below.
 
 To disable or enable automatic connection recovery, use
@@ -1074,7 +1074,7 @@ Automatic connection recovery, if enabled, will be triggered by the following ev
 
  * An I/O exception is thrown in connection's I/O loop
  * A socket read operation times out
- * Missed server [heartbeats](./heartbeats) are detected
+ * Missed server [heartbeats](/docs/heartbeats) are detected
  * Any other unexpected exception is thrown in connection's I/O loop
 
 whichever happens first.
@@ -1121,7 +1121,7 @@ in order to use those methods.
 
 Messages that are published using `Channel.basicPublish` when connection is down
 will be lost. The client does not enqueue them for delivery after connection has recovered.
-To ensure that published messages reach RabbitMQ applications need to use [Publisher Confirms](./confirms)
+To ensure that published messages reach RabbitMQ applications need to use [Publisher Confirms](/docs/confirms)
 and account for connection failures.
 
 ### Topology Recovery {#topology-recovery}
@@ -1149,19 +1149,19 @@ design decisions that applications developers need to be aware of.
 
 Topology recovery relies on a per-connection cache of entities (queues, exchanges,
 bindings, consumers). When, say, a queue is declared on a connection, it will be added to the cache.
-When it is deleted or is scheduled for deletion (e.g. because it is [auto-deleted](./queues))
+When it is deleted or is scheduled for deletion (e.g. because it is [auto-deleted](/docs/queues))
 it will be removed. This makes it possible to declare and delete entities on different
 channels without having unexpected results. It also means that consumer tags (a channel-specific identifier)
 must be unique across all channels on connections that use automatic connection recovery.
 
-When a connection is down or lost, it [takes time to detect](./heartbeats).
+When a connection is down or lost, it [takes time to detect](/docs/heartbeats).
 Therefore there is a window of time in which both the
 library and the application are unaware of effective
 connection failure.  Any messages published during this
 time frame are serialised and written to the TCP socket
 as usual. Their delivery to the broker can only be
 guaranteed via [publisher
-confirms](./confirms): publishing in AMQP 0-9-1 is entirely
+confirms](/docs/confirms): publishing in AMQP 0-9-1 is entirely
 asynchronous by design.
 
 When a socket or I/O operation error is detected by a
@@ -1171,7 +1171,7 @@ default. This design assumes that even though a lot of
 network failures are transient and generally short
 lived, they do not go away in an instant. Having a delay
 also avoids an inherent race condition between server-side resource
-cleanup (such as [exclusive or auto-delete queue](./queues) deletion)
+cleanup (such as [exclusive or auto-delete queue](/docs/queues) deletion)
 and operations performed on a newly opened connection on the same resources.
 
 Connection recovery attempts by default will continue at identical time intervals until
@@ -1187,7 +1187,7 @@ with an exception. The client currently does not perform
 any internal buffering of such outgoing messages. It is
 an application developer's responsibility to keep track of such
 messages and republish them when recovery succeeds.
-[Publisher confirms](./confirms) is a protocol extension
+[Publisher confirms](/docs/confirms) is a protocol extension
 that should be used by publishers that cannot afford message loss.
 
 Connection recovery will not kick in when a channel is closed due to a
@@ -1450,7 +1450,7 @@ transport mechanism, and just provide a wrapping layer on top of it.
 ## TLS Support {#tls}
 
 It's possible to encrypt the communication between the client and the broker
-[using TLS](./ssl). Client and server authentication (a.k.a. peer verification) is also supported.
+[using TLS](/docs/ssl). Client and server authentication (a.k.a. peer verification) is also supported.
 Here is the simplest, most naive way to use encryption with the Java client:
 
 ```java
@@ -1465,15 +1465,15 @@ factory.setPort(5671);
 factory.useSslProtocol();
 ```
 
-Note the client doesn't enforce any server authentication ([peer certificate chain verification](./ssl#peer-verification)) in the above
+Note the client doesn't enforce any server authentication ([peer certificate chain verification](/docs/ssl#peer-verification)) in the above
 sample as the default, "trust all certificates" `TrustManager` is used.
 This is convenient for local development but **prone to man-in-the-middle attacks**
-and therefore [not recommended for production](./production-checklist).
+and therefore [not recommended for production](/docs/production-checklist).
 
 To learn more about TLS support in RabbitMQ, see
-the [TLS guide](./ssl). If you only want to configure
+the [TLS guide](/docs/ssl). If you only want to configure
 the Java client (especially the peer verification and trust manager parts),
-read [the appropriate section](./ssl#java-client) of the TLS guide.
+read [the appropriate section](/docs/ssl#java-client) of the TLS guide.
 
 ## OAuth 2 Support {#oauth2-support}
 

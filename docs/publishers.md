@@ -543,7 +543,7 @@ by RabbitMQ are of particular interest when it comes to publishers:
 
  * Outgoing message rate
  * [Publisher confirmation](#data-safety) rate
- * [Connection churn](./connections#monitoring) rate
+ * [Connection churn](/client-libraries/connections#monitoring) rate
  * [Channel churn](./channels#monitoring) rate
  * Unroutable dropped message rate
  * Unroutable returned message rate
@@ -555,7 +555,7 @@ offer sub-optimal publishing rates and waste resources.
 Unroutable message rates can help detect applications that publish messages that cannot be
 routed to any queue. For example, this may suggest a misconfiguration.
 
-Client libraries may also collect metrics. [RabbitMQ Java client](./api-guide#metrics) is one
+Client libraries may also collect metrics. [RabbitMQ Java client](/client-libraries/api-guide#metrics) is one
 example. These metrics can provide insight into application-specific architecture (e.g. what publishing
 component publishes unroutable messages) that RabbitMQ nodes cannot infer.
 
@@ -592,7 +592,7 @@ list is by no means extensive.
 
 ### Connectivity Failures
 
-Like any client, a publisher has to successfully [connect](./connections) and successfully authenticate first.
+Like any client, a publisher has to successfully [connect](/client-libraries/connections) and successfully authenticate first.
 
 The number of potential connectivity issues is pretty broad and has a [dedicated guide](./troubleshooting-networking).
 
@@ -610,7 +610,7 @@ in the [Access Control guide](./access-control).
 
 Some applications open a new connection for every message published. This is highly inefficient
 and not how messaging protocols were designed to be used. Such condition can be
-[detected using connection metrics](./connections#monitoring).
+[detected using connection metrics](/client-libraries/connections#monitoring).
 
 Prefer long lived connections when possible.
 
@@ -628,7 +628,7 @@ after a period of time. Those messages can be republished if it's safe to do so 
 This is covered in [tutorial 7](/tutorials) and the [Data Safety](#data-safety) section
 in this guide.
 
-See [Recovery from Network Connection Failures](./connections#automatic-recovery) for details.
+See [Recovery from Network Connection Failures](/client-libraries/connections#automatic-recovery) for details.
 
 ### Routing Issues
 

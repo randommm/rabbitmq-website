@@ -1,6 +1,6 @@
 ---
 title: Erlang RabbitMQ client Library
-displayed_sidebar: docsSidebar
+displayed_sidebar: integClientLibSidebar
 ---
 <!--
 Copyright (c) 2005-2024 Broadcom. All Rights Reserved. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
@@ -28,7 +28,7 @@ to connect to and interact with RabbitMQ nodes.
 
 The library is [open-source](https://github.com/rabbitmq/rabbitmq-erlang-client/),
 and is dual-licensed under [the Apache License v2](https://www.apache.org/licenses/LICENSE-2.0)
-and [the Mozilla Public License v2.0](./mpl).
+and [the Mozilla Public License v2.0](/release-information/mpl).
 
 
 ## Releases {#releases}
@@ -59,7 +59,7 @@ dep_rabbit_common = hex &version-erlang-client;
 
 RabbitMQ Erlang client connects to RabbitMQ server nodes.
 
-You will need a running [RabbitMQ node](./download) to use with the client
+You will need a running [RabbitMQ node](/docs/download) to use with the client
 library.
 
 ## Download the Library and Documentation

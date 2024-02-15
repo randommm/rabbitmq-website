@@ -3752,7 +3752,7 @@ title: RabbitMQ Project Announcements
                 <li>Most recent 3.6.x version packages will continue to be available from Bintray, Package Cloud and GitHub</li>
             </ul>
             <p></p>
-            <p xmlns:doc="https://www.rabbitmq.com/namespaces/ad-hoc/doc">We encourage all 3.6.x users to <a href="./upgrade.html">upgrade</a> to <a href="./changelog.html">the latest release</a>.</p>
+            <p xmlns:doc="https://www.rabbitmq.com/namespaces/ad-hoc/doc">We encourage all 3.6.x users to <a href="/docs/upgrade.html">upgrade</a> to <a href="./changelog.html">the latest release</a>.</p>
             <p xmlns:doc="https://www.rabbitmq.com/namespaces/ad-hoc/doc">
                 We welcome any questions you may have on our
                 <a href="https://groups.google.com/forum/#!forum/rabbitmq-users">official mailing list, rabbitmq-users</a>.

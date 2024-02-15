@@ -34,8 +34,8 @@ see <a href="./documentation">All Documentation Guides</a>.
  * [Provisioning Tools](./download) (e.g. Chef cookbook, Puppet module, Docker image)
  * [Package Signatures](./signatures)
  * [Supported Erlang/OTP Versions](./which-erlang)
- * [Supported RabbitMQ Versions](./versions)
- * [Changelog](./changelog)
+ * [Supported RabbitMQ Versions](/release-information/versions)
+ * [Changelog](/release-information/changelog)
 
 ### Operating Systems and Platforms
 
@@ -104,7 +104,7 @@ see <a href="./documentation">All Documentation Guides</a>.
 
 ## Networking and TLS
 
- * [Client Connections](./connections)
+ * [Client Connections](/client-libraries/connections)
  * [Networking](./networking)
  * [Inter-protocol Conversions](./conversions)
  * [Troubleshooting Network Connectivity](./troubleshooting-networking)
@@ -119,14 +119,14 @@ see <a href="./documentation">All Documentation Guides</a>.
  * [Monitoring](./monitoring), metrics and health checks
  * [Troubleshooting guidance](./troubleshooting)
  * [rabbitmqadmin](./management-cli), an HTTP API command line tool
- * [Client Connections](./connections)
+ * [Client Connections](/client-libraries/connections)
  * [AMQP 0-9-1 Channels](./channels)
  * [Inter-protocol Conversions](./conversions)
  * [Internal Event Exchange](./event-exchange)
  * [Per Virtual Host Limits](./vhosts#limits)
  * [Per User Limits](./user-limits)
  * [Message Tracing](./firehose)
- * [Capturing Traffic with Wireshark](./amqp-wireshark)
+ * [Capturing Traffic with Wireshark](/other-information/amqp-wireshark)
 
 
 ### Clustering
@@ -188,7 +188,7 @@ see <a href="./documentation">All Documentation Guides</a>.
 
 ## STOMP, MQTT, WebSockets
 
- * [Client Connections](./connections)
+ * [Client Connections](/client-libraries/connections)
  * [STOMP](./stomp)
  * [MQTT](./mqtt)
  * [STOMP over WebSockets](./web-stomp)

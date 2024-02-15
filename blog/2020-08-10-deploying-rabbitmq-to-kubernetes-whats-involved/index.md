@@ -450,9 +450,9 @@ watch kubectl get all
 ## Create a Service for Client Connections
 
 If all the steps above succeeded, you should have functioning RabbitMQ cluster deployed on Kubernetes! ?
-However, having a RabbitMQ cluster on Kubernetes is only useful clients can [connect](/docs/connections) to it.
+However, having a RabbitMQ cluster on Kubernetes is only useful clients can [connect](/client-libraries/connections) to it.
 
-Time to create a Service to make the cluster accessible to [client connections](/docs/connections).
+Time to create a Service to make the cluster accessible to [client connections](/client-libraries/connections).
 
 The type of the Service depends on your use case. The [Kubernetes API reference](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#servicespec-v1-core)
 gives a good overview of the types of Services available.

@@ -1,6 +1,6 @@
 ---
 title: .NET/C# RabbitMQ Client Library
-displayed_sidebar: docsSidebar
+displayed_sidebar: integClientLibSidebar
 ---
 <!--
 Copyright (c) 2005-2024 Broadcom. All Rights Reserved. The term "Broadcom" refers to Broadcom Inc. and/or its subsidiaries.
@@ -102,7 +102,7 @@ targets what .NET standard (or .NET framework) version.
 ### Licensing {#licensing}
 
 The library is [open-source](https://github.com/rabbitmq/rabbitmq-dotnet-client),
-and is dual-licensed under the [the Apache License v2](https://www.apache.org/licenses/LICENSE-2.0) and [the Mozilla Public License v2.0](./mpl).
+and is dual-licensed under the [the Apache License v2](https://www.apache.org/licenses/LICENSE-2.0) and [the Mozilla Public License v2.0](/release-information/mpl).
 
 This means that the user can consider the library to be licensed under any of the licenses from the list above.
 For example, the user may choose the Apache Public License 2.0 and include this client into
@@ -118,7 +118,7 @@ Release notes can be found [on GitHub](https://github.com/rabbitmq/rabbitmq-dotn
 
 ## Documentation {#documentation}
 
-Please refer to the [RabbitMQ tutorials](/tutorials) and [.NET client user guide](./dotnet-api-guide).
+Please refer to the [RabbitMQ tutorials](/tutorials) and [.NET client user guide](/client-libraries/dotnet-api-guide).
 
 There's also [an online API reference](https://rabbitmq.github.io/rabbitmq-dotnet-client/index.html).
 

@@ -25,7 +25,7 @@ limitations under the License.
 RabbitMQ release notes are [available on GitHub](https://github.com/rabbitmq/rabbitmq-server/releases).
 See <a href="./versions">RabbitMQ support timeline</a> to find out what release series
 are supported.
-For guidance on upgrades, see the [Upgrade](./upgrade) and [Blue/Green Deployment Upgrade](./blue-green-upgrade) guides.
+For guidance on upgrades, see the [Upgrade](/docs/upgrade) and [Blue/Green Deployment Upgrade](/docs/blue-green-upgrade) guides.
 
 [Java client](https://github.com/rabbitmq/rabbitmq-java-client/releases), [Java Stream client](https://github.com/rabbitmq/rabbitmq-stream-java-client/releases),
 [.NET client](https://github.com/rabbitmq/rabbitmq-dotnet-client/releases), and [.NET Stream client](https://github.com/rabbitmq/rabbitmq-stream-dotnet-client/releases) are
@@ -1962,7 +1962,7 @@ released separately.
         <li><a href="./which-erlang">Minimum required Erlang version</a> is now 21.3</li>
         <li><a href="./quorum-queues">Quorum Queues</a></li>
         <li><a href="./monitoring">Monitoring</a> improvements: built-in <a href="./prometheus">Prometheus support</a> with a set of Grafana dashboards</li>
-        <li><a href="./feature-flags">Feature flags</a> and support for mixed version clusters <a href="./upgrade">during upgrades</a></li>
+        <li><a href="./feature-flags">Feature flags</a> and support for mixed version clusters <a href="/docs/upgrade">during upgrades</a></li>
         <li>New diagnostics CLI tools, new <a href="./monitoring#health-checks">health checks</a></li>
         <li><a href="./consumers#single-active-consumer">Single Active Consumer</a></li>
         <li>New <a href="https://github.com/rabbitmq/rabbitmq-auth-backend-oauth2">authentication and authorisation backend</a> that uses OAuth 2.0 (JWT) tokens and scopes</li>
@@ -2442,7 +2442,7 @@ released separately.
         <li><a href="./passwords">Password hashing</a> now uses SHA-256 by default:
         please <a href="./passwords">read the docs</a> before importing definitions from 3.5.x!</li>
         <li><a href="./web-stomp">Web STOMP</a> revamp, with new "pure WebSocket" endpoint</li>
-        <li><a href="./plugin-development">New build system</a> based on <a href="https://github.com/ninenines/erlang.mk">erlang.mk</a></li>
+        <li><a href="/other-information/plugin-development">New build system</a> based on <a href="https://github.com/ninenines/erlang.mk">erlang.mk</a></li>
         <li>Development <a href="https://github.com/rabbitmq/">moved entirely to GitHub</a></li>
       </ul>
     </td>
@@ -2538,7 +2538,7 @@ released separately.
         <li><a href="./priority">Priority queues</a></li>
         <li><a href="./persistence-conf">Faster persistence</a></li>
         <li>I/O statistics</li>
-        <li><a href="./dotnet-api-guide">.NET client API</a> changes</li>
+        <li><a href="/client-libraries/dotnet-api-guide">.NET client API</a> changes</li>
       </ul>
     </td>
     <td class="centre"><a href="https://github.com/rabbitmq/rabbitmq-server/blob/main/release-notes/README-3.5.0.txt">Release notes</a></td>
@@ -2665,7 +2665,7 @@ released separately.
     <td>
       <ul>
         <li><a href="./shovel-dynamic">Dynamic shovels</a></li>
-        <li><a href="./api-guide#recovery">Reconnecting Java client</a></li>
+        <li><a href="/client-libraries/api-guide#recovery">Reconnecting Java client</a></li>
         <li><a href="./consumer-prefetch">Consumer Prefetch</a></li>
       </ul>
     </td>

@@ -448,7 +448,7 @@ that interacts with the HTTP API. It can be downloaded from any RabbitMQ node th
 has the management plugin enabled at `http://<i>{node-hostname}</i>:15672/cli/`.
 
 For HTTP API clients in several languages,
-see [Developer Tools](./devtools).
+see [Developer Tools](/client-libraries/devtools).
 
 Some API endpoints return a lot of information. The volume can be reduced
 by filtering what columns are returned by `HTTP GET` requests. See
@@ -745,7 +745,7 @@ plugin are calculated over this period.
 
 Increasing this value will reduce CPU resource consumption of
 stats collection in environments with a large number of stats emitting
-entities such as [connections](./connections), [channels](./channels), [queues](./queues).
+entities such as [connections](/client-libraries/connections), [channels](./channels), [queues](./queues).
 
 In order to do so, set the value of the `collect_statistics_interval` configuration key
 to the desired interval in milliseconds and restart the node:
@@ -1163,4 +1163,4 @@ by RabbitMQ. Publishing and consuming that way will be significantly more effici
 provide access to various messaging protocol features such as [confirmations](./confirms).
 
 Publishing over HTTP API can be useful in environments where
-[long lived messaging protocol connections](./connections) is not an option.
+[long lived messaging protocol connections](/client-libraries/connections) is not an option.

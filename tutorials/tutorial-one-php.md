@@ -54,7 +54,7 @@ on behalf of the consumer.
 > RabbitMQ speaks multiple protocols. This tutorial covers AMQP 0-9-1, which is an open,
 > general-purpose protocol for messaging. There are a number of clients
 > for RabbitMQ in [many different
-> languages](/docs/devtools). We'll
+> languages](/client-libraries/devtools). We'll
 > use the php-amqplib in this tutorial, and [Composer](https://getcomposer.org/doc/00-intro.md)
 > for dependency management.
 >
@@ -246,8 +246,8 @@ Ctrl-C to stop it), so try running the sender from another terminal.
 
 While this tutorial strives to keep things simple and focus on explaining RabbitMQ
 concepts, it is important to call out something that is specific to PHP applications.
-In many cases PHP application will not be able to use [long-lived connections](/docs/connections#basics)
-that RabbitMQ assumes, creating a condition known as [high connection churn](/docs/connections#high-connection-churn).
+In many cases PHP application will not be able to use [long-lived connections](/client-libraries/connections#basics)
+that RabbitMQ assumes, creating a condition known as [high connection churn](/client-libraries/connections#high-connection-churn).
 
 To avoid this, PHP users are recommended to use [a special proxy](https://github.com/cloudamqp/amqproxy)
 in production when possible. The proxy avoids connection churn or at least significantly reduces it.

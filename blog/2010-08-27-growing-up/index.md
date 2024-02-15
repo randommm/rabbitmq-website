@@ -54,7 +54,7 @@ Contact us if you want support for more protocols, or have questions about our f
 
 **Better Plugin Support**
 
-We aim to provide support for a wide range of messaging applications without making the broker bloated and complex.  [Plugins](/docs/plugin-development) are key to this.  They let us and you extend and customise the capability of RabbitMQ.  Previously you could only load our plugins by building from source.  With the 2.0 release we are distributing pre-compiled plugins.  Drop them into a directory from where RabbitMQ can load them.
+We aim to provide support for a wide range of messaging applications without making the broker bloated and complex.  [Plugins](/other-information/plugin-development) are key to this.  They let us and you extend and customise the capability of RabbitMQ.  Previously you could only load our plugins by building from source.  With the 2.0 release we are distributing pre-compiled plugins.  Drop them into a directory from where RabbitMQ can load them.
 
 To get a feel for what you can do, I recommend taking a look at Tony Garnock-Jones excellent [introduction to plugins](http://www.erlang-factory.com/upload/presentations/229/ErlangFactorySFBay2010-TonyGarnock-Jones.pdf) from the last Erlang Factory.  Congratulations are due to [Jon Brisbin](http://jbrisbin.com/web2/archives/13/) for being the first person to create a plugin for RabbitMQ 2.0, in less than a day or two, adding [webhooks for RabbitMQ](http://github.com/jbrisbin/rabbitmq-webhooks).  Matthew Sackman and Tony Garnock-Jones have also created [some](http://lists.rabbitmq.com/pipermail/rabbitmq-discuss/2010-April/006808.html) [custom](http://github.com/tonyg/script-exchange) [exchanges](http://github.com/tonyg/presence-exchange).  Please note that many of these are demos and examples so the usual caveats apply.
 
@@ -62,7 +62,7 @@ To get a feel for what you can do, I recommend taking a look at Tony Garnock-Jon
 
 We think that messaging should be intuitive regardless of the application platform you develop for. In Java, the clear leader is Spring and we are part of the SpringSource division of Vmware, thus adding fully fledged Spring support was a must. We are extremely grateful to Mark Fisher and Mark Pollack from the SpringSource team for bringing this to fruition. With the release of RabbitMQ 2.0 we are highlighting to the whole community that [Spring support is officially available](http://www.springsource.org/spring-amqp).
 
-If you are a .NET user, you have been able to run RabbitMQ as a Windows service, and use it from [.NET languages and WCF](/docs/dotnet) for some years now. This is great if you want to do messaging from Windows based applications, such as Excel, to back end services written in Java or any other of the hundreds of AMQP integration points. Now, with Spring.NET support we offer you a common application development model as well, that works equally well in both Java and .NET.
+If you are a .NET user, you have been able to run RabbitMQ as a Windows service, and use it from [.NET languages and WCF](/client-libraries/dotnet) for some years now. This is great if you want to do messaging from Windows based applications, such as Excel, to back end services written in Java or any other of the hundreds of AMQP integration points. Now, with Spring.NET support we offer you a common application development model as well, that works equally well in both Java and .NET.
 
 **Putting it all together: more freedom to choose**
 

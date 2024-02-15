@@ -34,7 +34,7 @@ To receive these notifications, the client must present a
 `capabilities` table in its `client-properties` in which there is a key
 `connection.blocked` and a boolean value `true`.
 
-See the [capabilities](./connections#capabilities) section for further
+See the [capabilities](/client-libraries/connections#capabilities) section for further
 details on this. Our supported clients indicate this capability
 by default and provide a way to register handlers for the
 `connection.blocked` and `connection.unblocked` methods.
@@ -58,7 +58,7 @@ unblocked.
 
 ## Using Blocked Connection Notifications with Java Client {#java}
 
-With the [official Java client](./api-guide), blocked connection
+With the [official Java client](/client-libraries/api-guide), blocked connection
 notifications are handled by `BlockedListener`
 interface implementations. They can be registered on a
 `Connection` using the
@@ -81,7 +81,7 @@ connection.addBlockedListener(new BlockedListener() {
 
 ## Using Blocked Connection Notifications with .NET Client {#dotnet}
 
-With the [official .NET client](./dotnet-api-guide), blocked connection
+With the [official .NET client](/client-libraries/dotnet-api-guide), blocked connection
 notifications can be received by registering for the
 `ConnectionBlocked` and `ConnectionUnblocked` events in `IConnection`:
 

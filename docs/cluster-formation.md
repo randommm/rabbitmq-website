@@ -57,7 +57,7 @@ The following mechanisms are built into the core and always available:
  * [Pre-configured DNS A/AAAA records](#peer-discovery-dns)
 
 Additional peer discovery mechanisms are available via plugins. The following
-peer discovery plugins ship with [supported RabbitMQ versions](./versions):
+peer discovery plugins ship with [supported RabbitMQ versions](/release-information/versions):
 
  * [AWS (EC2)](#peer-discovery-aws)
  * [Kubernetes](#peer-discovery-k8s)
@@ -142,7 +142,7 @@ will be performed. This is true for all backends.
 As a general rule, a cluster that is only been partly formed, that is, only a subset of
 nodes has joined it **must be considered fully available** by clients.
 
-Individual nodes will accept [client connections](./connections) before the cluster is formed. In such cases,
+Individual nodes will accept [client connections](/client-libraries/connections) before the cluster is formed. In such cases,
 clients should be prepared to certain features not being available. For instance, [quorum queues](./quorum-queues)
 won't be available unless the number of cluster nodes matches or exceeds the quorum of configured replica count.
 

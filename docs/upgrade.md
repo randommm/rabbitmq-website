@@ -38,7 +38,7 @@ It is important to consider a number of things before upgrading RabbitMQ.
 1. [Caveats](#caveats)
 1. [Handling node restarts](#rabbitmq-restart-handling) in applications
 
-Changes between RabbitMQ versions are documented in the [change log](./changelog).
+Changes between RabbitMQ versions are documented in the [change log](/release-information/changelog).
 
 ## Important Note on Upgrading to 3.12
 
@@ -143,7 +143,7 @@ the new RabbitMQ version series.
 In rare cases patch versions of RabbitMQ can break some plugin APIs.
 Such cases will be documented in the breaking changes section of the release notes document.
 
-[Community plugins page](./community-plugins) contains information on RabbitMQ
+[Community plugins page](/other-information/community-plugins) contains information on RabbitMQ
 version support for plugins not included into the RabbitMQ distribution.
 
 ### Management Plugin Upgrades
@@ -565,8 +565,8 @@ and consumers) should be able to cope with a server-initiated connection
 close. Some client libraries offer automatic connection recovery
 to help with this:
 
-* [Java client](./api-guide#recovery)
-* [.NET client](./dotnet-api-guide#connection-recovery)
+* [Java client](/client-libraries/api-guide#recovery)
+* [.NET client](/client-libraries/dotnet-api-guide#connection-recovery)
 * [Bunny](http://rubybunny.info/articles/error_handling.html#network_connection_failures) (Ruby)
 
 In most client libraries there is a way to react to a connection closure, for example:
@@ -624,7 +624,7 @@ which do not fit a patch release.
 As soon as a new minor version is released (e.g. 3.7.0), previous version series (3.6)
 will have patch releases for critical bug fixes only.
 
-There will be no new patch releases for [versions after EOL](./versions).
+There will be no new patch releases for [versions after EOL](/release-information/versions).
 
 Version 3.5.x reached its end of life on 2017-09-11, 3.5.8 is the last patch for 3.5.
 It's recommended to always upgrade at least to the latest patch release in a series.

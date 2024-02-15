@@ -24,7 +24,7 @@ limitations under the License.
 ## Overview {#overview}
 
 This guide covers various topics related to channels, an [AMQP 0-9-1](/tutorials/amqp-concepts)-specific abstraction.
-Channels cannot exist without a connection, so getting familiar with the [Connections guide](./connections) first
+Channels cannot exist without a connection, so getting familiar with the [Connections guide](/client-libraries/connections) first
 is highly recommended.
 
 This guide covers:
@@ -66,7 +66,7 @@ and not share channels between them.
 
 ### Opening Channels
 
-Applications open a channel right after successfully opening a [connection](./connections).
+Applications open a channel right after successfully opening a [connection](/client-libraries/connections).
 
 Here's a Java client example that opens a new channel with an automatically allocated channel ID
 after opening a new connection:
@@ -161,7 +161,7 @@ times. Most common examples are:
    fail with a `405 RESOURCE_LOCKED`
 
 Client libraries provide a way to observe and react to channel exceptions. For example, in the Java
-client there is [a way to register an error handler](./api-guide#shutdown) and access a channel
+client there is [a way to register an error handler](/client-libraries/api-guide#shutdown) and access a channel
 shutdown (closure) reason.
 
 Any attempted operation on a closed channel will fail with an exception. Note that when RabbitMQ
@@ -173,7 +173,7 @@ Some client libraries may use blocking operations that wait for
 a response. In this case they may communicate channel exceptions differently, e.g. using
 runtime exceptions, an error type, or other means appropriate for the language.
 
-See the [AMQP 0-9-1 Reference](./amqp-0-9-1-reference) for a more complete list of
+See the [AMQP 0-9-1 Reference](/other-information/amqp-0-9-1-reference) for a more complete list of
 error codes.
 
 
@@ -219,7 +219,7 @@ error:
  operation none caused a connection exception not_allowed: "number of channels opened (22) has reached the negotiated channel_max (22)"
 ```
 
-Clients can be configured to allow fewer channels per connection. With [RabbitMQ Java client](./api-guide),
+Clients can be configured to allow fewer channels per connection. With [RabbitMQ Java client](/client-libraries/api-guide),
 `ConnectionFactory#setRequestedChannelMax` is the method that controls the limit:
 
 ```java
@@ -229,7 +229,7 @@ ConnectionFactory cf = new ConnectionFactory();
 cf.setRequestedChannelMax(32);
 ```
 
-With [RabbitMQ .NET client](./dotnet-api-guide), use the `ConnectionFactory#RequestedChannelMax`
+With [RabbitMQ .NET client](/client-libraries/dotnet-api-guide), use the `ConnectionFactory#RequestedChannelMax`
 property:
 
 ```csharp
@@ -272,7 +272,7 @@ channels consume on a node, the total
 number of channels on a node and then identify how many there are on each connection.
 
 The number of channels is displayed in the [management UI](./management) on the Overview tab,
-as is the [number of connections](./connections#monitoring).
+as is the [number of connections](/client-libraries/connections#monitoring).
 By dividing the number of channels by the number of connections
 the operator can determine an average number of channels per connection.
 
@@ -309,7 +309,7 @@ to the Connections tab and enable the relevant columns if they are not displayed
 
 <img class="screenshot" src="img/monitoring/channels/mgmt-ui-per-connection-channel-max-and-count.png" alt="Per connection channel count in management UI" title="Per connection channel count in management UI" />
 
-Overview and individual node pages provide a chart of channel churn rate as of [RabbitMQ 3.7.9](./changelog).
+Overview and individual node pages provide a chart of channel churn rate as of [RabbitMQ 3.7.9](/release-information/changelog).
 If the rate of channel open operations is consistently higher than that of channel close operations,
 this is evidence of a channel leak in one of the applications:
 

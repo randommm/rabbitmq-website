@@ -41,7 +41,7 @@ OS (out-of-memory killer) or exhausting all available free disk space:
  * When [free disk space](./disk-alarms) drops below the configured watermark (limit)
 
 Nodes will temporarily _block_ publishing connections
-by suspending reading from [client connection](./connections).
+by suspending reading from [client connection](/client-libraries/connections).
 Connections that are only used to *consume* messages will not be blocked.
 
 Connection [heartbeat monitoring](./heartbeats) will be deactivated, too.
